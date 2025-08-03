@@ -1,4 +1,4 @@
-title: Mozilla VPN Clients: RCE via file write and path traversal
+title: "Mozilla VPN Clients: RCE via file write and path traversal"
 target: Mozilla
 reported_platform: hackerone
 bug_type: Path Traversal
