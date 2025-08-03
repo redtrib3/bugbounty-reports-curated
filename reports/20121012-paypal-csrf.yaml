@@ -1,0 +1,17 @@
+title: No CSRF token present in Customer service message form.
+target: Paypal
+reported_platform: Bugcrowd
+bug_type: CSRF
+severity: Medium
+report_url: https://whitton.io/archive/my-experience-with-the-paypal-bug-bounty-programme/
+summary: |
+  A CSRF vulnerability exists in PayPal’s “Customer Service Message” form, which allows sellers to configure a personalized message
+  shown to customers when they open a dispute. The form lacks anti-CSRF token, allowing an attacker to craft a malicious page that 
+  silently updates the message on behalf of an authenticated user.
+references:
+  - https://whitton.io/archive/my-experience-with-the-paypal-bug-bounty-programme/
+tags:
+  - csrf
+  - missing-csrf-token
+  - impersonation
+bounty: 750
