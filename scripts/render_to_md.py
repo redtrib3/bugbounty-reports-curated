@@ -30,9 +30,8 @@ def render_markdown(report):
     return md
 
 
-testing = "/home/redtrib3/Desktop/bugbounty-reports-curated/"
-yaml_dir = testing + "reports"
-md_dir = testing + "reports-in-md"
+yaml_dir = "reports"
+md_dir = "reports-in-md"
 
 for filename in os.listdir(yaml_dir):
     if not filename.endswith(".yaml"):
