@@ -6,10 +6,11 @@ import yaml
 
 error_log = {}
 
-for filename in os.listdir():
+report_path = "../reports/"
+for filename in os.listdir(report_path):
     if filename.endswith(".yaml") or filename.endswith(".yml"):
         try:
-            with open(filename, "r", encoding="utf-8") as f:
+            with open(report_path + filename, "r", encoding="utf-8") as f:
                 yaml.safe_load(f)
         except yaml.YAMLError as e:
             error_log[filename] = str(e).splitlines()[0]  # just the first line of the error
