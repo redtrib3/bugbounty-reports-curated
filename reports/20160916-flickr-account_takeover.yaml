@@ -1,0 +1,27 @@
+title: Flickr Account Takeover using AWS Cognito API
+target: Flickr
+reported_platform: hackerone
+bug_type: Account Takeover
+severity: Critical
+report_url: https://hackerone.com/reports/1342088
+summary:
+  The authentication flow in flickr starts with identity.flickr.com, via javascript(Ajax) the credentials we pass in are 
+  sent to AWS cognito endpoint(cognito-idp.us-east-1.amazonaws.com in this case). The cognito endpoint responds with a json containing `AccessToken`
+  An accessToken can be used with the AWS CLI.
+
+  Each user in aws cognito has a unique token that can be used to manage their useraccount from the pool (flickr stores users in a pool).
+  It is possible to read and write into our user pool containing our user accounts's profile data such email, username etc.
+
+  It is possible to write the email attribute in our pool as well, potentially allowing us to add an email owned by other user.
+  For the account takeover:
+    - from the awscli with attacker access token, overwrite the attackeremail with the victim email.
+    - The victim email should be case-sensitive (different case from the original victim mail.)
+    - Login using the malicious look alike email we created, with the attacker password. (This works as the identity.flickr.com normalises the email)
+
+references:
+  - https://security.lauritz-holtmann.de/advisories/flickr-account-takeover/#hints-for-security-researchers
+  - https://hackerone.com/reports/1342088
+tags:
+  - account-takeover
+  - amazonaws
+bounty: Unspecified
