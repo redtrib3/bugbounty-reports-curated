@@ -1,0 +1,32 @@
+name: Render YAML to Markdown
+
+on:
+  push:
+    paths:
+      - 'reports/*.yaml'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Generate Markdown reports
+        run: python scripts/render_to_md.py
+
+      - name: Commit and push new Markdown files
+        run: |
+          git config user.name "YAML-to-MD[BOT]"
+          git config user.email "yamltomd[bot]@users.noreply.github.com"
+          git add reports-in-md/*.md
+          git commit -m "[Bot-action] Auto-generate markdown reports from YAML" || echo "No changes to commit"
+          git push
