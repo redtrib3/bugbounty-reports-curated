@@ -1,0 +1,30 @@
+title: Takeover an account that doesn't have a Shopify ID and more
+target: Shopify
+reported_platform: hackerone
+bug_type: Account Takeover
+severity: Critical
+report_url: https://hackerone.com/reports/867513
+summary: |
+  In a shopify account(an account to manage a store), there is a concept called PoS(point of sale) where we can create a channel for a physical store. Where new staff accounts are created for Staffs in the physical store.
+
+  **Shopify store** - An account for a business
+  **Shopify ID** - An account in the Shopify platf.
+  (You can create shopify stores without needing a shopify ID!)
+  **Dev store** - is a free development store used for testing purposes.
+
+  **Poc**: 
+  1. Create a dev store in shopify
+  2. Intercept the request and change the email to attacker email.
+  3. Install a POS in the devstore.
+  4. Add a new staff profile, intercept and make the email that of a victim(the account you TO)
+  5. Refresh the page and now shopify gives an option to "Create a shopify ID for the victim@shopify.com"
+  6.now shopify will create a shopify ID for the victim email without a verification.
+references:
+  - https://hackerone.com/reports/867513
+  - https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/AyPRNnVzskrRrPfNPhDbvnq1?response-content-disposition=attachment%3B%20filename%3D%22Takeover.mp4%22%3B%20filename%2A%3DUTF-8%27%27Takeover.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4IVVFZYJ%2F20250803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250803T115437Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCOtNx3r6wipbRpK9981hPx71fzHBZX2oSGMcJFMRVIVAIhAP9SDsao6Hi4iGAsmmJqDrCKGYsESB7RWOO7PA6Hzi%2FvKrEFCCwQAxoMMDEzNjE5Mjc0ODQ5IgxulQLt4zTgcXkcToAqjgUjF%2BDPBXgPK5GfGRTqH7NRdQsy4BgJzhLF824H7YywjuOtHr6bMj1y8Y2M4e8N00vMJ%2Flw0cRA7TkSDdwjlE4J9ZpmFO6d3y9ZoZu79o5pXmVVwjiAHv03U%2Fdr7wrGkG4J75Vfag0f%2Bf34%2Fm642yWHhgGRcA7oJxf5FUWLEnp1SN1quc0qtS2nj5An5ESz8wsTmBaOxGPfsnEVifKpWjvGH%2Bw7d8%2BmfFcwAALVHrOD0jcgENuQj8PtN6yolo9JPraMq5N88%2BLGU7KWRB5bCzEGIva0pxhgYvhqya3iM1IT5LXJHbxFiafF1JRUY3obXGcAxgUrzStnEudFGORbfQ5yzHSEMpZRPsdboTIBkQhRkU%2FED4gy4Iep%2F42DhqeEkEd3qyDDom6Rm2gO3nz%2F9vGSdbd9BuI5C8qz0cm%2FGQLA1lYb8SN%2BxwsLVtCvktmW2R4EitLULrMLOsqVwlBf8u9K7y%2FT9n0iE1Efvk13lsv6RAD7rr5oaPe%2BeqqWysPRIjXSEK9pauo0bfj78G6mitMQWej4TKIxTdEB9dNrrtGRiTdaUsttLYSa73R2v1jFMigX4H1CcOQ8ahEAU1QUCV%2BN51bckuQEdoQM93NVDHZ7BH6oWfFDZ8wVHEG%2FfwescJiuN9AULZnBohatRQQd8OOg3ROGtuUZywn57T48%2BY50ZJg7HNHEr1Gfis%2BVDIZGVVRVGdtYu6ErU%2BfUQEVna8ogx%2FtRwfCEREqhwWQxOlBh34urg7ZtWijYycfh99D%2BP9IXmAsYSNGz2xp4cWyw%2B78VfbvTT3IudTT7eEZ8cHQI6aG8LqP%2FcGM3obMvHRKdWtYcFN710pllBXIcPwg96YcGeoOPqcojNNUpm%2FI%2BRdYwzfq8xAY6sAEUePD7BD2hlZjald4WhTSmLd24diisCqfJJsF8t5zO1752eNuuX0MOyJQ7QH%2FEvTH9EP7sgC9JEpNXWr%2FJkPbuavqch2ovKv2x6UhLih%2Ba5nfOODumru%2F8UBO7mPlI6CNKp3MPReTJeXcGj%2BzNqFd4%2BrZXSW6xfw8UIF%2B1I%2BIW%2FYDBYRhg5gxteTP98x9g6USPfSYpBU3s%2Fbu%2FHAiBvvnhdtDWdqO%2FH0yN8mmii%2BCedg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=bf19fc3549d73e65dda86e7312537edb017b1adaa0435e9fcc702882c532615a
+tags:
+  - account-Takeover
+  - identity-spoofing
+  - improper-access-control
+
+bounty: 22500

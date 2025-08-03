@@ -1,0 +1,20 @@
+title: Exposure of personal IP address via Email
+target: Weblate
+reported_platform: hackerone
+bug_type: PII Exposure
+severity: Low
+report_url: https://hackerone.com/reports/3179850
+summary: |
+  Weblate is an opensource translation integration software that translates documentations, and various commuication.
+  When Weblate sends an email for various reasons such as notifications, password reset, etc. They include the Public IP address of the user doing the action.
+  This passes through many smtp servers in the middle, storing information. Violating GDPR as Public IP is a PII.
+  Impact is that exposed IP can be used for various attcks and recon.
+references:
+  - https://hackerone.com/reports/3179850
+  - https://gdpr-info.eu/recitals/no-30/
+  - https://github.com/WeblateOrg/weblate/pull/15102
+tags:
+  - PII-Exposure
+  - privacy-violation
+  - sensitive-data
+bounty: Unspecified

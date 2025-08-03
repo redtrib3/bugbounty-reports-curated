@@ -1,0 +1,17 @@
+title: Github access token exposure
+target: shopify
+reported_platform: hackerone
+bug_type: sensitive data exposure
+severity: Critical
+report_url: https://hackerone.com/reports/1087489
+summary: | 
+  A researcher on testing desktop macOS application found a env file which wasn't used by the application
+  On further investigation, the .env file contained a github PAT owned by a shopify employee and has Read-Write access on Shopify production github repository.
+references:
+  - https://hackerone.com/reports/1087489
+  - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+tags:
+  - sensitive-data-exposure
+  - cryptographic-failure
+  - misconfiguration
+bounty: 50000

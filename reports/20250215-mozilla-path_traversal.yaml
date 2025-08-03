@@ -1,0 +1,25 @@
+title: Mozilla VPN Clients: RCE via file write and path traversal
+target: Mozilla
+reported_platform: hackerone
+bug_type: Path Traversal
+severity: High
+report_url: https://hackerone.com/reports/2995025
+summary: | 
+  In Mozilla VPN Client, there is a feature to enable developer mode in settings. This has the inspector feature that runs a websocket in ws://localhost:8765 - this is for debugging purpose. 
+  The WebSocket accepts a `live_reload` command that takes in a url staging any file, whatever file we pass in will be saved to the localpath: 
+  %LOCALAPPDATA%\Mozilla\Mozilla VPN\hot_reload\
+
+  An attacker can stage a http server serving a file with the name "..\\..\\test.dll", which will save it two directories behind. This can be leveraged to achieve code execution.
+
+references:
+  - https://hackerone.com/reports/2995025
+  - https://www.mozilla.org/en-US/products/vpn/download/
+  - https://github.com/mozilla-mobile/mozilla-vpn-client/blob/main/src/inspector/inspectorhotreloader.cpp
+tags:
+  - path-traversal
+  - remote-code-execution
+  - websocket
+  - local-file-write
+  - developer-feature-abuse
+  - client-side
+bounty: 6000

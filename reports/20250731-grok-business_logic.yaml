@@ -1,0 +1,27 @@
+title: Business logic flaw in Grok AI allows premium usage post free-tier
+target: GrokAI
+reported_platform: hackerone
+bug_type: business_logic
+severity: Medium
+report_url: https://l4zyhacker.medium.com/how-i-find-vulnerability-can-make-x-twitter-lose-millions-of-dollars-ae34d713254f
+summary: |
+  In Grok AI, after free credits ran out, the account with premium features remained active for 30 minutes, 
+  allowing non-paying users to consume premium resources.
+
+  The researcher reported this and was initially marked as "informative", but the underlying impact was more severe.
+
+  They identified two undocumented parameters:
+  - `n`: Controls number of completions (1 < n < 128). Higher values generate more token output.
+  - `temperature`: Controls randomness/detail in responses (0 < temp < 1). Higher values generate longer/more diverse outputs.
+
+  Using an automated script within the 30-minute window, an attacker could theoretically consume resources worth up to 26.5 million USD.
+
+  Fix likely involved disabling access immediately after quota exhaustion.
+references:
+  - https://l4zyhacker.medium.com/how-i-find-vulnerability-can-make-x-twitter-lose-millions-of-dollars-ae34d713254f
+tags:
+  - business-logic
+  - api
+  - rate-limiting
+  - abuse
+bounty: 1200
