@@ -6,7 +6,7 @@ import yaml
 
 error_log = {}
 
-report_path = "../reports/"
+report_path = "reports/"
 for filename in os.listdir(report_path):
     if filename.endswith(".yaml") or filename.endswith(".yml"):
         try:
