@@ -1,0 +1,18 @@
+title: Subdomain takeover of datacafe-cert.starbucks.com
+target: starbucks
+reported_platform: hackerone
+bug_type: Subdomain takeover
+severity: High
+report_url: https://hackerone.com/reports/665398
+summary: |
+  The researcher found a subdomain owned by Starbucks - datacafe-cert.starbucks.com, having a CNAME record pointing to an unclaimed Azure web service at azurewebsites.net. This meant that the subdomain was dangling: it still pointed to an Azure app that no longer existed.
+  By registering the same app name on Azure (e.g., datacafe-cert.azurewebsites.net), the researcher was able to take control of the Starbucks subdomain. This allowed them to serve content under *.starbucks.com, effectively achieving a subdomain takeover 
+  a high-severity vulnerability due to the potential for phishing, cookie theft, or internal application abuse.  
+references: https://hackerone.com/reports/665398
+tags:
+  - subdomain-takeover
+  - dns
+  - azure
+  - cloud-misconfiguration
+  - domain-hijacking
+bounty: Unspecified

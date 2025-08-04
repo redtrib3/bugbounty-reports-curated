@@ -1,0 +1,31 @@
+title: Account Takeover via Password Reset without user interactions
+target: gitlab
+reported_platform: hackerone
+bug_type: Account Takeover
+severity: Critical
+report_url: https://hackerone.com/reports/2293343
+summary: |
+  "The researcher found a way to successfully takeover an account by exploiting a logical flaw in the reset password functionality.
+  **Proof of concept:** <br>
+  - Go to "Forgot Your Password?" link<br>
+  - Enter the victim's email and intercept the submit request via Burp Suite.<br>
+  - Then right-click on the HTTP Editor inside Burp Suite and select Extensions -> Content-Type Converter -> Convert to JSON (make sure to have the Content-Type Converter plugin installed from the BApp Store)<br>
+  - Now replace this converted JSON line  "user[email]":"victim@gmail.com", to
+   ```
+   "user" {
+     "email" [
+              "victim@gmail.com",
+              "attacker@gmail.com"
+       ]
+   },```
+  <br>
+   - forward the request and the reset link is sent to the attacker email as well."
+references:
+  - https://hackerone.com/reports/2293343
+tags:
+  - account-takeover
+  - gitlab
+  - burpsuite
+bounty: 35000
+
+

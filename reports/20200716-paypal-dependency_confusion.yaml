@@ -1,0 +1,25 @@
+title: RCE via npm misconfig -- installing internal libraries from the public registry
+target: Paypal
+reported_platform: hackerone
+bug_type: Dependency confusion
+severity: Critical
+report_url: https://hackerone.com/reports/925585
+summary: |
+  The researcher came across a public github repository containing code meant for internal usage. The package.json file contained references
+  to packages which did not exist publicly in the NPM registry. The researcher quickly uploded a malicious NPM packages for testing with the same
+  name as that of the internal packages.
+
+  When a system or developer relies on a package that exists only in a private/internal registry, but that registry is not explicitly set in .npmrc, 
+  NPM will check the public registry by default. If an attacker uploads a public package with the same name, NPM may install the attacker's version instead.
+
+  To get a callback when the internal paypal systems install the researcher's malicious package, the researcher setup a preinstall script
+  that collects basic information about the system the package is installed on (including the hostname) and relay it back to the attacker by Exfilterating the hex encoded data as DNS query
+  to a AUTHORITATIVE name-server owned by the researcher.
+references:
+  - https://hackerone.com/reports/925585
+  - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
+tags:
+  - dependency_confusion
+  - npm_packages
+  - preinstall
+bounty: 30000
