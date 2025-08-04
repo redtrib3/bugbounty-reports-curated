@@ -1,0 +1,16 @@
+title: Subdomain takeover due to an unclaimed Amazon S3 bucket
+target: U.S. Dept Of Defense
+reported_platform: hackerone
+bug_type: subdomain takeover
+severity: Critical
+report_url: https://hackerone.com/reports/918946
+summary: |
+  The researcher came across a subdomain owned by the US dept. of defense that was an amazon S3 bucket in US-EAST region that no longer existed.
+  The researcher was able to claim the s3 bucket, successfully taking over the subdomain.
+references:
+  - https://hackerone.com/reports/918946
+tags:
+  - subdomain-takeover
+  - awsamazon
+  - s3-bucket
+bounty: Unspecified

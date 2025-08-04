@@ -1,0 +1,18 @@
+title: Subdomain Takeover to Authentication bypass 
+target: roblox
+reported_platform: hackerone
+bug_type: subdomain takeover
+severity: Critical
+report_url: https://hackerone.com/reports/335330
+summary: |
+  The researcher discovered that the subdomain devrel.roblox.com pointed to an expired HubSpot instance.
+  This allowed an attacker to claim the service and take control of the subdomain.
+  By doing so, the attacker could serve content from a trusted Roblox subdomain, enabling attacks such as cookie theft or authentication bypass.
+  The researcher demonstrated the impact by showing how authentication could be bypassed using the hijacked subdomain by accessing the  roblox authentication cookies cross domain.
+references:
+  - https://hackerone.com/reports/335330
+tags:
+  - subdomain-takeover
+  - authentication-bypass
+  - cookie-stealing
+bounty: Unspecified

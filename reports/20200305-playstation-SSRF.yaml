@@ -1,0 +1,16 @@
+title: SSRF on Image renderer
+target: Playstation
+reported_platform: hackerone
+bug_type: SSRF
+severity: High
+report_url: https://hackerone.com/reports/811136
+summary: |
+  The domain `image.api.np.km.playstation.net` allows image urls to be passed via the `image` parameter. It is possible to use this endpoint to send Gopher 
+  requests that result in SMTP messages being sent out. Create a gopher redirect php file to your attacker server. 
+  Point the URL to your file location via the image parameter https://image.api.np.km.playstation.net/images/?format=png&image=http%3A%2F%2Fblackdoorsec.net/gopher3.php
+  On checking the SMTP log you will see a email from an ec2 instance.
+references:
+  - https://hackerone.com/reports/811136
+tags:
+  - SSRF
+bounty: 1000

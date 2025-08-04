@@ -1,0 +1,15 @@
+title: Server Side Request Forgery (SSRF) via Analytics Reports
+target: hackerone
+reported_platform: hackerone
+bug_type: SSRF
+severity: Critical
+report_url: https://hackerone.com/reports/2262382
+summary: |
+  A security researcher found a SSRF vulnerability present in the analytics creation feature in hackerone - https://hackerone.com/organizations/ORG/analytics/reports
+  PoC - 1. create a new report, choose some filters, click apply and intercept the request. in any template field, inject any html payload - such as an Ifram reading from a internal file.
+  This leads to read of internal files as the analytics dashboard is loaded, allowing SSRF.
+references:
+  - https://hackerone.com/reports/2262382
+tags:
+  - SSRF
+bounty: 25000
