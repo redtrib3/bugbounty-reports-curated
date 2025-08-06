@@ -1,0 +1,18 @@
+title: IDOR allow access to payments data of any user - nordsecurity
+target: Nord VPN
+reported_platform: hackerone
+bug_type: IDOR
+severity: High
+report_url: https://hackerone.com/reports/751577
+summary: |
+  A Researcher found a vulnerable API endpoint - /api/v1/orders in domain.nordvpn.com that is accessible without auth and will return the transaction details of the user.
+  The API endpoint had a json key called "user_id" that accepted a numerical id, changing the value to any higher or lower id will return the transaction
+  detail of another user.
+references:
+  - https://hackerone.com/reports/751577
+tags:
+  - IDOR
+  - PII-leak
+  - sensitive-data
+  - broken-access-control
+bounty: Unspecified

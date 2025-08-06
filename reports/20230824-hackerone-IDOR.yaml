@@ -1,0 +1,15 @@
+title: IDOR - Delete all Licenses and certifications from users account using CreateOrUpdateHackerCertification GraphQL query
+target: hackerone
+reported_platform: hackerone
+bug_type: IDOR
+severity: High
+report_url: https://hackerone.com/reports/2122671
+summary: |
+  A Researcher found a vulnerability in a graphql endpoint that allows a attacker to delete Licenses and Certifications stored in the profile with guessable ID.
+  A range of data - licenses and certifications can also be deleted by specifying a range value with the guessable ID.
+references:
+  - https://hackerone.com/reports/2122671
+tags:
+  - IDOR
+  - sensitive-data
+bounty: 12500
