@@ -1,0 +1,16 @@
+title: IDOR leads to view other user Biographical details (Possible PII LEAK)
+target: U.S. Dept Of Defense
+reported_platform: hackerone
+bug_type: IDOR
+severity: Medium
+report_url: https://hackerone.com/reports/2586641
+summary: |
+  The researcher discovered an IDOR vulnerability in multiple endpoints under the `/JOINOnline/Board/QuestionCard/` path, which allows unauthorized access to other users' demographic and contact details by simply changing the user ID in the URL. No authorization checks are enforced, leading to exposure of PII across accounts.
+references:
+  - https://hackerone.com/reports/2586641
+tags:
+  - IDOR
+  - Information-Disclosure
+  - sensitive-data
+  - broken-access-control
+bounty: Unspecified

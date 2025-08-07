@@ -1,0 +1,15 @@
+title: Critical IDOR - Get venue data of any organization remotely
+target: Veris
+reported_platform: hackerone
+bug_type: IDOR
+severity: Unspecified
+report_url: https://hackerone.com/reports/120305
+summary: |
+  Veris is a smart automation company that provides services designing smart office automation. In context, a 'venue' is a physical location of an office.
+  A reseacher found a vulnerability in sandbox.veris.in that let's any user get sensitive information about a venue i.e an office.
+  using the endpoint `/api/v1/gatekeepers/?venue_id=36`, by incrementing the venue_id, we get the information about other organizations.
+references:
+  - https://hackerone.com/reports/120305
+tags:
+  - IDOR
+bounty: Swag

@@ -1,0 +1,17 @@
+title: IDOR to view User Order Information
+target: Bohemia interactive
+reported_platform: hackerone
+bug_type: IDOR
+severity: High
+report_url: https://hackerone.com/reports/287789
+summary: |
+  The reseacher found a IDOR vulnerability in the endpoint - https://store.bistudio.com/order/1003793?confirmed=true where `1003793` is the placeholder for the ID.
+  The id is numerical and guessable, on increasing or decreasing it, we get the Order data of other users which is PII including public IP addresses.
+references:
+  - https://hackerone.com/reports/287789
+tags:
+  - IDOR
+  - Information-Disclosure
+  - PII-LEAK
+  - sensitive-data
+bounty: Unspecified

@@ -1,0 +1,17 @@
+title: IDOR allows an attacker to modify the links of any user
+target: reddit
+reported_platform: hackerone
+bug_type: IDOR
+severity: High
+report_url: https://hackerone.com/reports/1661113
+summary: |
+  The researcher found a way to edit the social links in the profiles of other users due to an IDOR vulnerability in Reddit’s GraphQL API. By querying a user's profile, an attacker could retrieve
+  internal IDs of social links and then use those IDs in an unauthorized update mutation to modify the link titles or URLs. No ownership or authorization checks were enforced on these operations.
+references:
+  - https://hackerone.com/reports/1661113
+tags:
+  - IDOR
+  - Information-Disclosure
+  - sensitive-data
+  - broken-access-control
+bounty: Unspecified
