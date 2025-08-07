@@ -1,0 +1,28 @@
+# IDOR vulnerability in unreleased HackerOne Copilot feature
+
+**Target**: hackerone
+
+**Reported on**: hackerone
+
+**Bug Type**: IDOR
+
+**Severity**: Medium
+
+**Report URL**: https://hackerone.com/reports/2218334
+
+## Summary
+The researcher who has been continuously monitoring JS files found a new GraphQL queries about hackerone CoPilot, an unrealeased feature at that time.
+The researcher was about to find an IDOR vulnerability when creating conversations. The graphql query used to create new conversation was
+`"operationName":"NewConversation"`, A request was sent to backend by graphql with the key-value pairs and its response included a ConversationID.
+The reseacher tested for IDOR by using the "`operationName: DestroyLlmConversation`" to delete other user's conversations.
+
+## Bounty received ($)
+Unspecified
+
+## References
+- https://hackerone.com/reports/2218334
+## Tags
+- IDOR
+- Information-Disclosure
+- sensitive-data
+- broken-access-control

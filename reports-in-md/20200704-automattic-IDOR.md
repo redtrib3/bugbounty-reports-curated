@@ -1,0 +1,28 @@
+# IDOR when editing users leads to Account Takeover without User Interaction at CrowdSignal
+
+**Target**: automattic
+
+**Reported on**: hackerone
+
+**Bug Type**: IDOR
+
+**Severity**: Critical
+
+**Report URL**: https://hackerone.com/reports/915114
+
+## Summary
+The researcher found a IDOR vulnerability in the user invite to a team feature in crowdsignal. If you click Edit button on any user of your team at 
+https://app.crowdsignal.com/users/list-users.php, you will send a GET request to https://app.crowdsignal.com/users/invite-user.php?id=(userid)&popup=1, the `id` parameter is vulnerable here 
+as it takes a numerical sequential number in range `00010006` to `19920500`. On sending a GET request to vulnerable endpoint, you will get a response with the victim email and the optional button to update permissions.
+on clicking that, we will successfully takeover the victim account.
+
+## Bounty received ($)
+Unspecified
+
+## References
+- https://hackerone.com/reports/915114
+## Tags
+- IDOR
+- Information-Disclosure
+- sensitive-data
+- broken-access-control
