@@ -1,0 +1,14 @@
+title: IDOR vulnerability (Price manipulation)
+target: Acronis
+reported_platform: hackerone
+bug_type: IDOR
+severity: Medium
+report_url: https://hackerone.com/reports/1403176
+summary: |
+  The researcher found a IDOR vulnerability in payment processing that will lead to price manipulation i.e the increase and decrease of price in a marketplace.
+  To reproduce the bug, go to the the website (acronis.cz), buy any product go to cart and click on buy now, intercept the request and change the price and forward the request.
+references:
+  - https://hackerone.com/reports/1403176
+tags:
+  - IDOR
+bounty: Unspecified
