@@ -1,0 +1,15 @@
+title:  IDOR on removing Share
+target: Enter.health
+reported_platform: hackerone
+bug_type: IDOR
+severity: Unspecified
+report_url: https://hackerone.com/reports/85720
+summary: |
+  The researcher found a authorization flaw in a shared crypto wallet where the user that the wallet was shared with can remove access to another user.
+  Only the owner of the wallet should be able to have the permissions to remove access to other user, but any shared user can user an endpoint to delete any other user's access.
+  The vulnerability can be reproduced by sending a POST request to  `/dashboard/account/<accountID>/sharing/delete` with the data containing the parameter bankUserId=<victim's ID> and the csrf token.
+references:
+  - https://hackerone.com/reports/85720
+tags:
+  - IDOR
+bounty: 250

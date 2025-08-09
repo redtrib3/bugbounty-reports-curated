@@ -1,0 +1,16 @@
+title: Insecure Direct Object References in https://vimeo.com/forums
+target: Vimeo
+reported_platform: hackerone
+bug_type: IDOR
+severity: Unspecified
+report_url: https://hackerone.com/reports/52176
+summary: |
+  The researcher found a vulnerability that lets an attacker post a comment under any video impersonating as any other user. To exploit this vulnerability the attacker needs to know the comment_id of any comment that victim has made (This can easily be found),
+  then the attacker should make a comment as himself under any video, then click on edit with the intercept on in Burp. this should intercept the request to `/forums/wanted_and_offered/topic:130606?comment_id=13010973&is_sticky=0&action=comment_edit_form`, Change the 
+  comment_id parameter to the victim's comment id that was found earlier, forward the request and you will get the option to edit and post the victim's comment, post the comment and now the victim has made the comment under the post you want.
+references:
+  - https://hackerone.com/reports/52176
+  - https://vimeo.com/122303200
+tags:
+  - IDOR
+bounty: Unspecified

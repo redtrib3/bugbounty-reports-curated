@@ -1,0 +1,14 @@
+title: Insecure Direct Object References that allows to read any comment (even if it should be private)
+target: Vimeo
+reported_platform: hackerone
+bug_type: IDOR
+severity: Unspecified
+report_url: https://hackerone.com/reports/52181
+summary: |
+  The researcher found an IDOR vulnerablity that enabled a user to reveal private comments on a video by just knowing its comment ID - knowing comment_id is a precondition.
+  This is by editing an attacker posted comment from attacker account, intercepting the request and changing the comment_id get parameter in the request `GET /122303200?comment_id=<CHANGE_THIS>&is_sticky=0&action=comment_edit_form HTTP/1.1`.
+references:
+  - https://hackerone.com/reports/52181
+tags:
+  - IDOR
+bounty: Unspecified

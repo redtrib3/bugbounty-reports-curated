@@ -1,0 +1,14 @@
+title: IDOR able to buy a plan with lesser fee
+target: Automattic
+reported_platform: hackerone
+bug_type: IDOR
+severity: Informative
+report_url: https://hackerone.com/reports/1679276
+summary: |
+  The researcher found a vulnerablity that let's a user pay for an order with the same amount but different currency. in the url - https://account.mailpoet.com/orders/new?p=214&cur=usd
+  change the `cur` parameter to any other currency and it shows the same amount, The security team triaged this as informative, as the platform has same price for every product in every currency by design. 
+references:
+  - https://hackerone.com/reports/1679276
+tags:
+  - IDOR
+bounty: Unspecified
