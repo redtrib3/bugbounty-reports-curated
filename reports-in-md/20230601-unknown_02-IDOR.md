@@ -1,0 +1,24 @@
+# Interesting Story of an Account Takeover Vulnerability
+
+**Target**: private
+
+**Reported on**: bugcrowd
+
+**Bug Type**: IDOR
+
+**Severity**: High
+
+**Report URL**: https://cysky0x1.medium.com/my-first-p2-idor-insecure-direct-object-references-22d780e59a0d
+
+## Summary
+The vulnerability was in the support ticket system's endpoint `/v2/my-support/ticket/{ticket_id}`, which used predictable numeric IDs and did not enforce proper authorization checks.
+By changing the `ticket_id` in the URL to another valid number, the researcher was able to view tickets submitted by other users, exposing private communications and potentially sensitive data. 
+This was reported as a P2 (High severity) issue on Bugcrowd and subsequently fixed. _This summary is generated using AI_
+
+## Bounty received ($)
+Unspecified
+
+## References
+- https://cysky0x1.medium.com/my-first-p2-idor-insecure-direct-object-references-22d780e59a0d
+## Tags
+None
