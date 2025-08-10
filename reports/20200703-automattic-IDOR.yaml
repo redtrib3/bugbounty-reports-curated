@@ -1,0 +1,16 @@
+title: IDOR when moving contents at CrowdSignal
+target: automattic
+reported_platform: hackerone
+bug_type: IDOR
+severity: High
+report_url: https://hackerone.com/reports/915127
+summary: |
+    An IDOR in the “Move to” functionality allowed attackers to take over any user’s content by modifying the `actionable[]` parameter in a POST request. 
+    With a free account, attackers could move victim content to their own account with limited control. With a team account, attackers could transfer victim content to 
+    another account within their team, gaining full access. Content IDs are sequential, enabling easy enumeration. _This summary is generated using AI_
+references:
+  - https://hackerone.com/reports/915127
+tags:
+  - IDOR
+  - broken-access-control
+bounty: Unspecified

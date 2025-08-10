@@ -1,0 +1,17 @@
+title: Vimeo.com Insecure Direct Object References Reset Password
+target: Vimeo
+reported_platform: hackerone
+bug_type: IDOR
+severity: Critical
+report_url: https://hackerone.com/reports/42587
+summary: |
+  The researcher found a vulnerability in the password reset functionality through which an attacker can reset anyone's password by knowning the numerical userid of user.
+  The user id is easily obtainable from vimeo's public API. The password reset was in format - `https://vimeo.com/forgot\_password/[user id]/[token]`, By simply replacing the userid with the id of other user,
+  one could takeover any account.
+references:
+  - https://hackerone.com/reports/42587
+tags:
+  - IDOR
+  - broken-access-control
+  - password-reset
+bounty: Unspecified

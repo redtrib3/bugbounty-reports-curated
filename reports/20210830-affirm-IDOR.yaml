@@ -1,0 +1,14 @@
+title: UniFi v3.2.10 Cross-Site Request Forgeries / Referer-Check Bypass
+target: Affirm
+reported_platform: hackerone
+bug_type: IDOR
+severity: Medium
+report_url: https://hackerone.com/reports/1323406
+summary: |
+  The researcher found an IDOR vulnerability in a payment inteface api, one of the parameter to the API is `checkout_ari`, when replaced with the value of other user, it dumped the order information of the user the checkout_ari belonged to.
+references:
+  - https://hackerone.com/reports/1323406
+tags:
+  - IDOR
+  - broken-access-control
+bounty: 500
