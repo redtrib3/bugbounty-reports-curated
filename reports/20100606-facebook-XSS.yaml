@@ -1,7 +1,7 @@
 title: Facebook XSS via Cross-Origin Resource Sharing
 target: Facebook
 reported_platform: Unspecified
-bug_type: business_logic
+bug_type: XSS
 severity: High
 report_url: https://maustin.net/articles/2010-07/facebook_html5
 summary: |
