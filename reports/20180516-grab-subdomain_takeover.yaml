@@ -1,0 +1,14 @@
+title: Subdomain Takeover Via Insecure CloudFront Distribution cdn.grab.com
+target: Grab
+reported_platform: hackerone
+bug_type: Subdomain takeover
+severity: Medium  
+report_url: https://hackerone.com/reports/352869
+summary: | 
+  The researcher found a subdomain takeover vulnerability in cdn.grab.com which had a dangling CNAME pointing to a cloudfront instance.
+  The subdomain was not registered on amazon Aws Cloudfront. The researcher was able to successfully takeover the domain by registering a cloudfront subdomain.
+references: 
+  - https://hackerone.com/reports/352869
+tags:
+  - subdomain-takeover
+bounty: 1000

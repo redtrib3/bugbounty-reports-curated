@@ -1,0 +1,13 @@
+title: Subdomain takeover at signup.uber.com
+target: hackerone
+reported_platform: hackerone
+bug_type: Subdomain takeover
+severity: High  
+report_url: https://hackerone.com/reports/197489
+summary: |
+  The domain signup.uber.com was pointing to an unclaimed Netlify domain, allowing an attacker to take over the subdomain.
+references: 
+  - https://hackerone.com/reports/197489
+tags:
+  - subdomain-takeover
+bounty: Unspecified

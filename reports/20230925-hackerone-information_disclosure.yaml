@@ -1,0 +1,16 @@
+title: Google Docs link in JS files allows editing & reading survey information
+target: hackerone
+reported_platform: hackerone
+bug_type: Information disclosure
+severity: Medium  
+report_url: https://hackerone.com/reports/2180521
+summary: |
+  The researcher who was monitoring Javascript files of hackerone found a new update that introduced a variable with a google docs link.
+  The google docs link was leaked via the file `https://hackerone.com/assets/static/js/5930.078b8e86.chunk.js`, The document was editable and had global read permission.
+references: 
+  - https://hackerone.com/reports/2180521
+tags:
+  - information-disclosure
+  - data-leak
+  - lack-of-permissions
+bounty: 2500
