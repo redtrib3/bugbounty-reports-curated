@@ -4,3 +4,10 @@
 
 # bugbounty-reports-curated
 An archive of bug bounty reports rewritten in a standardized, structured format for easier learning and reference.
+
+
+## Report Stats (Real-time)
+
+| Top Vulnerabilities | Top Programs |
+|---------------------|--------------|
+| ![Top Vulnerabilities](https://github-reports-badge.report-counter.workers.dev/top-vuln-stats) | ![Top programs](https://github-reports-badge.report-counter.workers.dev/top-prog-stats)  |
