@@ -1,0 +1,16 @@
+title: Information Disclosure in /skills call
+target: hackerone
+reported_platform: hackerone
+bug_type: Information Disclosure
+severity: Medium
+report_url: https://hackerone.com/reports/188719
+summary: |
+  The researcher found out that there was a flaw in the new skillset feature in hackerone that responded with sensitive user data.
+  The skill set feature is used to send tailored invitations for private programs. Hackers have to submit reports as proof for their skills. 
+  Due to an incorrectly written query, the proof, which includes report titles, was exposed to all other hackers that applied for the same skill set.
+references:
+  - https://hackerone.com/reports/188719
+tags:
+  - misconfiguration
+  - information-disclosure
+bounty: 10000

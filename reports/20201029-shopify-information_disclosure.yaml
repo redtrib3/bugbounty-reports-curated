@@ -1,0 +1,17 @@
+title: "[Information Disclosure] Amazon S3 Bucket of Shopify Ping (iOS) have public access of other users image"
+target: shopify
+reported_platform: hackerone
+bug_type: Information Disclosure
+severity: High
+report_url: https://hackerone.com/reports/1021906
+summary: | 
+  Shopify ping is a shopify mobile application that enables integration with an already used chat platform, allowing centralization.
+  The researcher found an exposed amazon s3 bucket with directory listing enabled exposing shared user images from private chats, This endpoint
+  was discovered when testing the chat app, and the researcher noticed that the send images where stored in an s3 bucket owned by shopify.
+references:
+  - https://hackerone.com/reports/1021906
+tags:
+  - sensitive-data-exposure
+  - cryptographic-failure
+  - misconfiguration
+bounty: 2900

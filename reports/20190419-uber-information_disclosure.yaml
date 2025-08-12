@@ -1,0 +1,16 @@
+title: Sensitive user information disclosure at bonjour.uber.com/marketplace/_rpc via the 'userUuid' parameter.
+target: Uber
+reported_platform: hackerone
+bug_type: Information Disclosure
+severity: High
+report_url: https://hackerone.com/reports/542340
+summary: |
+  The researcher found out that it was possible to pass in another user's UUID to `userUuid` post parameter to `https://bonjour.uber.com/marketplace/_rpc?rpc=getConsentScreenDetails` 
+  and retrieved data, which included mobile API token which could be potentially used to takeover the driver/rider account.
+references: 
+  - https://hackerone.com/reports/542340
+tags:
+  - misconfiguration
+  - information-disclosure
+  - API-vulnerability
+bounty: Unspecified

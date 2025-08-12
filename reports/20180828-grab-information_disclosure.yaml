@@ -1,0 +1,19 @@
+title: "[Grab Android/iOS] Insecure deeplink leads to sensitive information disclosure"
+target: Grab
+reported_platform: hackerone
+bug_type: Information Disclosure
+severity: High
+report_url: https://hackerone.com/reports/401793
+summary: |
+  The Grab Passenger app exposes a deep link that loads arbitrary web pages inside an internal WebView
+  (ZendeskSupportActivity). This WebView exposes a JavaScript interface named 'Android' with methods like `getGrabUser()`
+  that return sensitive user data. Because the deep link allows an attacker to specify any URL, they can host a malicious
+  page that calls these exposed methods to steal sensitive information without user consent. The issue arises due to
+  lack of restrictions on loaded URLs and unrestricted access to sensitive native methods via the JavaScript interface.
+references:
+  - https://hackerone.com/reports/401793
+tags:
+  - misconfiguration
+  - information-disclosure
+  - mobile-pentesting
+bounty: Unspecified
