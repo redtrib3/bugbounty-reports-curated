@@ -1,0 +1,14 @@
+title: Domain Takeover [3737signals.com]
+target: basecamp
+reported_platform: hackerone
+bug_type: Subdomain takeover
+severity: Low  
+report_url: https://hackerone.com/reports/1253926
+summary: |
+  The researcher on reviewing the android source code, came across a referenced domain - 3737signals[.]com which was similar to the domain used by the application - 37signals[.]com,
+  on checking the website, it returned a response saying requested url could not be retrieved and it was a webmasters error page. On checking the domain availability, it was on sale in webmasters.com.
+references:
+  - https://hackerone.com/reports/1253926
+tags:
+  - subdomain-takeover
+bounty: Unspecified

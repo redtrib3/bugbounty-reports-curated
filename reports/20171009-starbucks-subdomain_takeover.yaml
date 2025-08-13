@@ -1,0 +1,14 @@
+title: Subdomain takeover on developer.openapi.starbucks.com
+target: starbucks
+reported_platform: hackerone
+bug_type: Subdomain takeover
+severity: High  
+report_url: https://hackerone.com/reports/275714
+summary: |
+  The researcher found out that the endpoint - developer.openapi.starbucks.com returned 200 status code response with body containing the text: 'Unrecognized domain: developers.starbucks.com',
+  the server header indicated that it was hosted in www.mashery.com, the researcher registered and added the domain to his page and was able to host his own content from that domain.
+references:
+  - https://hackerone.com/reports/275714
+tags:
+  - subdomain-takeover
+bounty: Unspecified
