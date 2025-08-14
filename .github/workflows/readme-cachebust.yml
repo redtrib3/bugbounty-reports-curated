@@ -1,0 +1,32 @@
+name: Daily Stats Badge Refresh
+
+on:
+  schedule:
+    - cron: '0 19 * * *'  # runs daily at 11:00pm UTC
+  workflow_dispatch:
+
+jobs:
+  refresh-badges:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set cachebust date
+        run: echo "CACHEBUST=$(date +%Y%m%d)" >> $GITHUB_ENV
+
+      - name: Update badge URLs in README
+        run: |
+          # Replace or add cachebust query for Top Vulnerabilities
+          sed -i -E "s|(top-vuln-stats)(\?[^)]+)?|\1?cb=$CACHEBUST|g" README.md
+          # Replace or add cachebust query for Top Programs
+          sed -i -E "s|(top-prog-stats)(\?[^)]+)?|\1?cb=$CACHEBUST|g" README.md
+
+      - name: Commit changes if README changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git diff --cached --exit-code || git commit -m "[readme] Update stats-imgs cachebust - $CACHEBUST"
+          git push
