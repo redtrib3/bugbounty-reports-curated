@@ -1,0 +1,15 @@
+title: uber.com may RCE by Flask Jinja2 Template Injection
+target: uber
+reported_platform: hackerone
+bug_type: CSTI
+severity: Low
+report_url: https://hackerone.com/reports/230232
+summary: |
+  The researcher found a Client side template injection in the address saving feature of wordpress that lets a user put in template code and get it executed in addresses section.
+  This was classified as a stored self xss as there is no way for another client to access the endpoint where the XSS is stored.
+references:
+  - https://hackerone.com/reports/230232
+tags:
+  - CSTI
+  - stored-XSS
+bounty: Unspecified

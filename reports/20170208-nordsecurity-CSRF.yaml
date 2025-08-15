@@ -4,6 +4,7 @@ reported_platform: hackerone
 bug_type: CSRF
 severity: Critical
 report_url: https://hackerone.com/reports/204703
+summary: |
   This report describes a Cross-Site Request Forgery (CSRF) vulnerability in NordVPN's profile management page. 
   An attacker could craft a malicious webpage that, when visited by an authenticated user, automatically submits a form to change the victim’s account password without their consent. 
   The vulnerability affects the password change functionality, potentially allowing account takeover if exploited. 
