@@ -1,0 +1,13 @@
+title: Race Condition leads to undeletable group member
+target: hackerone
+reported_platform: hackerone
+bug_type: Race condition
+severity: Low
+report_url: https://hackerone.com/reports/604534
+summary: |
+  The researcher found race condition vulnerability where a user could be added twice to a group he is already part of. This could prevent the group creator from kicking out the newely created user.
+references:
+  - https://hackerone.com/reports/604534
+tags:
+  - race-condition  
+bounty: Unspecified

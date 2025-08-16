@@ -1,0 +1,14 @@
+title: Race condition in performing retest allows duplicated payments
+target: hackerone
+reported_platform: hackerone
+bug_type: Race condition
+severity: Medium
+report_url: https://hackerone.com/reports/429026
+summary: |
+  The researcher found a race condition vulnerability in the retest feature of bounty reporting in hackerone, when you submit a report and gets triaged, the Triage team can ask you for retest, and a retest is paid a specific amount.
+  The researcher found out that by concurrently sending the retest request multiple times, multiple payments are made from hackerone.
+references:
+  - https://hackerone.com/reports/429026
+tags:
+  - race-condition  
+bounty: 2500

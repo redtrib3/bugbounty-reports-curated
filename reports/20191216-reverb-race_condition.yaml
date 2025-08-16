@@ -1,0 +1,14 @@
+title: Race Condition allows to redeem multiple times gift cards which leads to free "money"
+target: reverb.com
+reported_platform: hackerone
+bug_type: Race condition
+severity: High
+report_url: https://hackerone.com/reports/759247
+summary: |
+  The researcher found a Race condition vulnerability that let him redeem gift cards multiple times in an ecommerce website, the exploitation step included sending a valid gift card redeem request,
+  quickly to exploit the race condition and therefore double the gift card expenditure. 
+references:
+  - https://hackerone.com/reports/759247
+tags:
+  - race-condition  
+bounty: Unspecified

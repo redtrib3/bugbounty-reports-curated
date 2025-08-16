@@ -1,0 +1,14 @@
+title: Race condition in joining CTF group
+target: hackerone
+reported_platform: hackerone
+bug_type: Race condition
+severity: Low
+report_url: https://hackerone.com/reports/1540969
+summary: |
+  The researcher found a race condition in https://ctf.hacker101.com/group/join that allows a user to join the same CTF group multiple times. 
+  The user will also show up in the group member list multiple times, and affect the group statistics.
+references:
+  - https://hackerone.com/reports/1540969
+tags:
+  - race-condition  
+bounty: 500
