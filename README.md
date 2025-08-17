@@ -10,4 +10,4 @@ An archive of bug bounty reports rewritten in a standardized, structured format 
 
 | Top Vulnerabilities | Top Programs |
 |---------------------|--------------|
-| ![Top Vulnerabilities](https://github-reports-badge.report-counter.workers.dev/top-vuln-stats?cb=20250817190216) | ![Top programs](https://github-reports-badge.report-counter.workers.dev/top-prog-stats?cb=20250817190216)  |
+| ![Top Vulnerabilities](https://github-reports-badge.report-counter.workers.dev/top-vuln-stats?cb=20250817190957) | ![Top programs](https://github-reports-badge.report-counter.workers.dev/top-prog-stats?cb=20250817190957)  |
