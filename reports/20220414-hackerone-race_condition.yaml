@@ -10,5 +10,5 @@ summary: |
 references:
   - https://hackerone.com/reports/1540969
 tags:
-  - race-condition  
+  - race-condition
 bounty: 500

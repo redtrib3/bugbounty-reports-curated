@@ -1,0 +1,15 @@
+title: Information disclosure -> 2fa bypass -> POST exploitation 
+target: algolia
+reported_platform: hackerone
+bug_type: MFA
+severity: Medium
+report_url: https://hackerone.com/reports/1276373
+summary: |
+  The researcher found vulnerability in a webapp that let's an attacker bypass 2FA by knowning a sensitive secret - `gauth_secret` that is leaked on the response when requesting 2FA renew from an account.
+  The leaked gauth_secret could be used on google authenticator to create codes that can directly be used to pass MFA. Although it doesn't have a direct impact, a account takeover is possible if the gauth_token of a user is leaked somehow.
+references:
+  - https://hackerone.com/reports/1276373
+tags:
+  - 2FA
+  - MFA-bypass
+bounty: Unspecified
