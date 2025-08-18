@@ -1,0 +1,17 @@
+title: HTTP Request Smuggling on https://labs.data.gov
+target: GSA Bounty
+reported_platform: hackerone
+bug_type: HTTP request smuggling
+severity: High
+report_url: https://hackerone.com/reports/726773
+summary: |
+  The researcher found an HTTP request smuggling (TE.CL) vulnerability in an application where the frontend uses Transfer encoding header and the backend uses Content Length.
+  To reproduce the vulnerability the reporter had set a POST request to '/' followed by a POST request to '/hopefully404', the reported also made sure to send a batch of request after 
+  to prevent the attack affecting innocent users. The attacker url was reportedly reflected in the response html as well.
+references:
+  - https://hackerone.com/reports/726773
+tags:
+  - http-request-smuggling
+  - http1.1-must-die
+  - desync
+bounty: 750

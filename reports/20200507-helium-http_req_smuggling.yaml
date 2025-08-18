@@ -1,0 +1,16 @@
+title: HTTP request Smuggling (CL.TE) - Helium 
+target: Helium
+reported_platform: hackerone
+bug_type: HTTP request smuggling
+severity: High
+report_url: https://hackerone.com/reports/867952
+summary: |
+  The researcher found an HTTP request smuggling (CL.TE) vulnerability in an application where the frontend uses Content length header and the backend uses Transfer encoding.
+  The researcher successfully demonstrated the impact by showing that a victim can be potentially redirected to attacker website.
+references:
+  - https://hackerone.com/reports/867952
+tags:
+  - http-request-smuggling
+  - http1.1-must-die
+  - desync
+bounty: Unspecified

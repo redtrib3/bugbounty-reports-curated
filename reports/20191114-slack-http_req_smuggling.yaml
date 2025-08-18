@@ -1,0 +1,15 @@
+title: Mass account takeovers using HTTP Request Smuggling on https://slackb.com/ to steal session cookies
+target: Slack
+reported_platform: hackerone
+bug_type: HTTP request smuggling
+severity: Critical
+report_url: https://hackerone.com/reports/737140
+summary: |
+  The researcher exploited an HTTP Request Smuggling bug on a Slack asset to perform a CL.TE-based hijack onto neighboring customer requests. This hijack forced the victim into an open-redirect that forwarded the victim onto the researcher's collaborator client with slack domain cookies. The posted cookies in the customer request on the collaborator client contained the customer's secret session cookie. With this attack the researcher was able to prove session takeover against arbitrary slack customers.
+references:
+  - https://hackerone.com/reports/737140
+tags:
+  - http-request-smuggling
+  - http1.1-must-die
+  - desync
+bounty: Unspecified
