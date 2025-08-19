@@ -1,0 +1,15 @@
+title: Wordpress unzip_file path traversal
+target: Wordpress
+reported_platform: hackerone
+bug_type: path traversal  
+severity: Medium
+report_url: https://hackerone.com/reports/205481
+summary: |
+  A researcher found out that the wordpress `unzip_file` function was vulnerable to path traversal as it enabled any attacker to overwrite any file in writable path using '../<filepath to overwrite>'. 
+  The vulnerability existed as the `$to` parameter unzipped the file into any path without normalization of the input. The patch of this vulnerability was released in 4.8.2 (7 months since reporting.)
+references:
+  - https://hackerone.com/reports/205481
+tags:
+  - path-traversal
+  - violation-of-secure-design-principal
+bounty: Unspecified

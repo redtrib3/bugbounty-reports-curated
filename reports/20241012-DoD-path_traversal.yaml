@@ -1,0 +1,14 @@
+title: "Unauthenticated LFI (Local File Inclusion) using the symbol `!`"
+target: U.S. Dept Of Defense
+reported_platform: hackerone
+bug_type: path traversal  
+severity: Critical
+report_url: https://hackerone.com/reports/2778380
+summary: |
+  The researcher found that the Jolokia endpoint `/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/` is vulnerable to path traversal using `!` in directory names. This allows an unauthenticated attacker to read arbitrary local files on the server, including sensitive system files like /etc/passwd and /etc/crontab, potentially exposing configuration and application secrets.
+references:
+  - https://hackerone.com/reports/2778380
+tags:
+  - path-traversal
+  - violation-of-secure-design-principal
+bounty: Unspecified

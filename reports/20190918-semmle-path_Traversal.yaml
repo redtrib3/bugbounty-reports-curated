@@ -1,0 +1,14 @@
+title: Worker container escape lead to arbitrary file reading in host machine [again]
+target: Semmle
+reported_platform: hackerone
+bug_type: path traversal
+severity: Critical
+report_url: https://hackerone.com/reports/697055
+summary: |
+  The researcher discovered that when both `lgtm.yml` and `.lgtm.yml` exist in a project, LGTM processes only `lgtm.yml` but keeps `.lgtm.yml` in the build directory. By creating a symlink named `.lgtm.yml` pointing to a host machine file, an attacker can cause LGTM to expose arbitrary host files after a successful build (e.g., /etc/passwd). This enables sensitive information disclosure from the underlying host.
+references:
+  - https://hackerone.com/reports/697055
+tags:
+  - path-traversal
+  - privilege-escalation
+bounty: 2000

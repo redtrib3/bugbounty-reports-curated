@@ -1,0 +1,14 @@
+title: Path traversal, to RCE
+target: Gitlab
+reported_platform: hackerone
+bug_type: path traversal
+severity: High
+report_url: https://hackerone.com/reports/733072
+summary: |
+  The researcher found a path traversal vulnerability in the Gitlab package registry API that allows an attacker to write to any path writable by `git` user, potentially allowing an attacker to write to `authorized_keys` with their public key and get a ssh shell.
+references:
+  - https://hackerone.com/reports/733072
+tags:
+  - path-traversal
+  - violation-of-secure-design-principal
+bounty: 12000

@@ -1,0 +1,15 @@
+title: Full read SSRF in www.evernote.com that can leak aws metadata and local file inclusion
+target: evernote
+reported_platform: hackerone
+bug_type: SSRF
+severity: Critical
+report_url: https://hackerone.com/reports/1189367
+summary: |
+  The researcher found a vulnerable url in evernote - `https://www.evernote.com/ro/aHR0cDovLzE2OS4yNTQuMTY5LjI1NC8jdGVzdC5qcw==/-1430533899.js` that allowed SSRF. the base64 encoded value can be replaced with a external url or a internal file (using file:// wrapper.), allowing SSRF and Path traversal.
+  The only whitelisting done on the url was the need for the url to end with *.js or *.css, which can be achieved by using a '#' character followed by the any *.js filename.
+references:
+  - https://hackerone.com/reports/1189367
+tags:
+  - SSRF
+  - path-traversal
+bounty: 5000
