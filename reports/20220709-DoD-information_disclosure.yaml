@@ -1,0 +1,14 @@
+title: "Sensitive information disclosure [HtUS]"
+target: U.S. Dept Of Defense
+reported_platform: hackerone
+bug_type: Information Disclosure
+severity: High
+report_url: https://hackerone.com/reports/1632104
+summary: |
+  The researcher found an exposed server health/status endpoint in an asset out-of-scope in the DoD policy, but the report was nonetheless triaged and resolved.
+references:
+  - https://hackerone.com/reports/1632104
+tags:
+  - information-disclosure
+  - sensitive-data-leak
+bounty: Unspecified

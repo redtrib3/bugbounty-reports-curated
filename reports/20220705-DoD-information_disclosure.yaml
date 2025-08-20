@@ -1,0 +1,14 @@
+title: "Critical sensitive information Disclosure. [HtUS]"
+target: U.S. Dept Of Defense
+reported_platform: hackerone
+bug_type: Information Disclosure 
+severity: High
+report_url: https://hackerone.com/reports/1626236
+summary: |
+  The researcher found an endpoint - `/database.php.orig` where database credentials were exposed in source in plaintext.
+references:
+  - https://hackerone.com/reports/1626236
+tags:
+  - information-disclosure
+  - sensitive-data-leak
+bounty: Unspecified
