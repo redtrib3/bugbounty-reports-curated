@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>IDOR in Nord VPN - Bug Bounty Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-900 text-gray-200">
+  <nav class="bg-gray-800 shadow p-4 mb-6">
+    <div class="container mx-auto">
+      <a href="/"><h1 class="text-xl font-bold text-yellow-400 font-mono"> BountyRead</h1></a>
+    </div>
+  </nav>
+
+  <main class="flex-grow container mx-auto px-4">
+    
+<div class="bg-gray-800 rounded-lg shadow-lg p-8 mb-10 max-w-4xl mx-auto relative">
+
+
+  <!-- Main Report -->
+  <h1 class="text-3xl font-bold text-yellow-400 mb-4">IDOR allow access to payments data of any user - nordsecurity</h1>
+  <div class="flex flex-wrap gap-4 text-gray-300 text-sm mb-6">
+    <span><strong>Program:</strong> Nord VPN</span>
+    <span><strong>Bug Type:</strong> IDOR</span>
+    <span><strong>Bounty:</strong> Unspecified</span>
+    <span><strong>Date:</strong> 2019-12-04</span>
+  </div>
+
+  
+  <div class="flex flex-wrap gap-2 mb-8">
+    
+      <span class="bg-yellow-500 text-black rounded-full px-3 py-1 text-xs font-semibold">IDOR</span>
+    
+      <span class="bg-yellow-500 text-black rounded-full px-3 py-1 text-xs font-semibold">PII-leak</span>
+    
+      <span class="bg-yellow-500 text-black rounded-full px-3 py-1 text-xs font-semibold">sensitive-data</span>
+    
+      <span class="bg-yellow-500 text-black rounded-full px-3 py-1 text-xs font-semibold">broken-access-control</span>
+    
+  </div>
+  
+
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold text-gray-200 mb-3">Summary</h2>
+    <div class="text-gray-300 leading-relaxed">
+      <p>A Researcher found a vulnerable API endpoint - /api/v1/orders in domain.nordvpn.com that is accessible without auth and will return the transaction details of the user.
+The API endpoint had a json key called &quot;user_id&quot; that accepted a numerical id, changing the value to any higher or lower id will return the transaction
+detail of another user.</p>
+
+    </div>
+    <!--<p class="text-gray-300 leading-relaxed whitespace-pre-line break-words break-all">A Researcher found a vulnerable API endpoint - /api/v1/orders in domain.nordvpn.com that is accessible without auth and will return the transaction details of the user.
+The API endpoint had a json key called &quot;user_id&quot; that accepted a numerical id, changing the value to any higher or lower id will return the transaction
+detail of another user.
+</p>-->
+  </section>
+
+  
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold text-gray-200 mb-3">References</h2>
+    <ul class="list-disc list-inside text-gray-300 space-y-1">
+      
+      <li>
+        <a class="text-yellow-400 underline hover:text-yellow-300" href="https://hackerone.com/reports/751577" target="_blank">https://hackerone.com/reports/751577</a>
+      </li>
+      
+    </ul>
+  </section>
+  
+<!-- Bottom action buttons -->
+<div class="flex items-center justify-between mt-4 max-w-4xl mx-auto">
+  <!-- Back link -->
+  <a href="/"
+     class="inline-flex items-center px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition"
+     title="Back to reports">
+    ← Back to Reports
+  </a>
+
+   
+   <!--twitter-->
+  <div class="flex items-center space-x-2">
+    <button type="button" fill="currentColor" class="share-btn w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded text-gray-200" data-share="twitter" title="Share on X">
+      <svg class="w-4 h-4 text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/></svg>
+    </button>
+    <!--linkedin-->
+    <button type="button" class="share-btn w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded text-gray-200" data-share="linkedin" title="Share on LinkedIn">
+      <svg  class="w-4 h-4 text-gray-300" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.98h4.52V24H.22V8.98zM8.58 8.98h4.34v2.05h.06c.6-1.14 2.06-2.35 4.24-2.35 4.53 0 5.36 2.98 5.36 6.85V24h-4.52v-7.38c0-1.76-.03-4.02-2.45-4.02-2.46 0-2.84 1.92-2.84 3.9V24H8.58V8.98z"/></svg>
+    </button>
+
+    <!--copy-->
+    <button type="button" class="share-btn w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded text-gray-200" data-share="copy" title="Copy link">
+      <svg class="w-5 h-5 text-gray-300 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.213 9.787a3.391 3.391 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  const shareButtons = document.querySelectorAll(".share-btn");
+  const pageUrl = window.location.href;
+  const shareText = `👀 Checkout this Bug report - IDOR in Nord VPN \n\nhttps://${document.domain}/reports/20191204-nordsecurity-IDOR`;
+
+  shareButtons.forEach(btn => {
+    const type = btn.dataset.share;
+
+    btn.addEventListener("click", function() {
+      if(type === "twitter") {
+        const url = `https://x.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`;
+        window.open(url, "_blank", "noopener");
+      } else if(type === "linkedin") {
+        const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}&summary=${encodeURIComponent(shareText)}`;
+        window.open(url, "_blank", "noopener");
+      } else if(type === "copy") {
+        if(navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(pageUrl).then(() => {
+            const originalSvg = btn.innerHTML;
+            // Swap to tick icon
+            btn.innerHTML = `<svg class="w-5 h-5 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>`;
+            // Revert after 3 seconds
+            setTimeout(() => {
+              btn.innerHTML = originalSvg;
+            }, 3000);
+          });
+        } else {
+          prompt("Copy this link:", pageUrl);
+        }
+      }
+    });
+  });
+});
+</script>
+  </main>
+
+  
+
+<footer class="mt-5 bg-gray-900 text-center text-gray-400 py-8 px-4 relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-gray-700/0 before:via-gray-700/20 before:to-gray-700/0">
+  <div class="mb-3 mr-4 space-x-6 text-gray-600 text-sm">
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated" target="_blank" rel="noopener noreferrer">Source Code</a>
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated/pulls" target="_blank" rel="noopener noreferrer">Contribute</a>
+    <a class="hover:text-yellow-500" href="mailto:admin@redtrib3.in">Contact</a>
+  </div>
+
+  <div class=" mb-3 text-gray-500 text-xs">
+    All reports are for educational purposes only.
+  </div>
+</footer>
+
+
+</body>
+
+</html>

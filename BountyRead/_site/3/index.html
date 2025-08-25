@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Bounty Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-900 text-gray-200">
+  <nav class="bg-gray-800 shadow p-4 mb-6">
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold text-yellow-400">🛡️ Bug Bounty Reports</h1>
+    </div>
+  </nav>
+
+  <main class="flex-grow container mx-auto px-4">
+    
+<div class="flex flex-wrap items-center justify-between mb-6 gap-4">
+  <h2 class="text-2xl font-semibold text-gray-200">All Reports</h2>
+  <input id="searchInput" 
+         type="text" 
+         placeholder="Search reports..." 
+         class="w-64 px-4 py-2 rounded bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+</div>
+
+
+<table class="min-w-full bg-gray-800 shadow-sm rounded mb-6 text-gray-200">
+  <thead>
+    <tr class="bg-gray-700 text-left text-gray-200">
+      <th class="p-3">Title</th>
+      <th class="p-3">Target</th>
+      <th class="p-3">Bug Type</th>
+      <th class="p-3">Bounty</th>
+      <th class="p-3">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220529-shopify-information_disclosure/">Information disclosure ( Google Sales Channel )</a>
+      </td>
+      <td class="p-3">Shopify</td>
+      <td class="p-3">Information Disclosure</td>
+      <td class="p-3">500</td>
+      <td class="p-3">2022-05-29</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220626-cosmos-race_condition/">Race condition in faucet when using starport</a>
+      </td>
+      <td class="p-3">Cosmos</td>
+      <td class="p-3">Race condition</td>
+      <td class="p-3">5000</td>
+      <td class="p-3">2022-06-26</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220705-DoD-information_disclosure/">Critical sensitive information Disclosure. [HtUS]</a>
+      </td>
+      <td class="p-3">U.S. Dept Of Defense</td>
+      <td class="p-3">Information Disclosure</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2022-07-05</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220709-DoD-information_disclosure/">Sensitive information disclosure [HtUS]</a>
+      </td>
+      <td class="p-3">U.S. Dept Of Defense</td>
+      <td class="p-3">Information Disclosure</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2022-07-09</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220803-reddit-IDOR/">Getting access of mod logs from any public or restricted subreddit with IDOR vulnerability</a>
+      </td>
+      <td class="p-3">reddit</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">5000</td>
+      <td class="p-3">2022-08-03</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220806-reddit-IDOR/">IDOR allows an attacker to modify the links of any user</a>
+      </td>
+      <td class="p-3">reddit</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2022-08-06</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220824-automattic-IDOR/">IDOR able to buy a plan with lesser fee</a>
+      </td>
+      <td class="p-3">Automattic</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2022-08-24</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20230502-hackerone-IDOR/">Insecure Direct Object Reference (IDOR) - Delete Campaigns</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2023-05-02</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20230601-unknown_02-IDOR/">Interesting Story of an Account Takeover Vulnerability</a>
+      </td>
+      <td class="p-3">private</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2023-06-01</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20230824-hackerone-IDOR/">IDOR - Delete all Licenses and certifications from users account using CreateOrUpdateHackerCertification GraphQL query</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">12500</td>
+      <td class="p-3">2023-08-24</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20230925-hackerone-information_disclosure/">Google Docs link in JS files allows editing &amp; reading survey information</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">Information disclosure</td>
+      <td class="p-3">2500</td>
+      <td class="p-3">2023-09-25</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20231007-mozilla-MFA/">Account deletion using the /v1/account/destroy API endpoint using account password without 2FA verification</a>
+      </td>
+      <td class="p-3">Mozilla</td>
+      <td class="p-3">MFA</td>
+      <td class="p-3">1000</td>
+      <td class="p-3">2023-10-07</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20231012-shopify-IDOR/">IDOR on GraphQL queries BillingDocumentDownload and BillDetails</a>
+      </td>
+      <td class="p-3">Shopify</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2023-10-12</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20231020-hackerone-IDOR/">IDOR vulnerability in unreleased HackerOne Copilot feature</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2023-10-20</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20231123-hackerone-SSRF/">Server Side Request Forgery (SSRF) via Analytics Reports</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">SSRF</td>
+      <td class="p-3">25000</td>
+      <td class="p-3">2023-11-23</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20231220-gitlab-account_takeover/">Account Takeover via Password Reset without user interactions</a>
+      </td>
+      <td class="p-3">gitlab</td>
+      <td class="p-3">Account Takeover</td>
+      <td class="p-3">35000</td>
+      <td class="p-3">2023-12-20</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20240215-bykea-IDOR/">Broken Access Control (IDOR) in Booking Detail and Bids Could Leads to Sensitive Information Disclosure</a>
+      </td>
+      <td class="p-3">Bykea</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2024-02-15</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20240502-hackerone-IDOR/">Insecure Direct Object Reference (IDOR) Allows Viewing Private Report Details via /bugs.json endpoint</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2024-05-02</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20240620-smule-subdomain_takeover/">Possible Subdomain Takeover For Inbound Emails</a>
+      </td>
+      <td class="p-3">smule</td>
+      <td class="p-3">Subdomain takeover</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2024-06-20</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20240704-DoD-IDOR/">IDOR leads to view other user Biographical details (Possible PII LEAK)</a>
+      </td>
+      <td class="p-3">U.S. Dept Of Defense</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2024-07-04</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20240912-unknown_01-account_takeover/">Interesting Story of an Account Takeover Vulnerability</a>
+      </td>
+      <td class="p-3">private</td>
+      <td class="p-3">Account Takeover</td>
+      <td class="p-3">2000</td>
+      <td class="p-3">2024-09-12</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20241012-DoD-path_traversal/">Unauthenticated LFI (Local File Inclusion) using the symbol `!`</a>
+      </td>
+      <td class="p-3">U.S. Dept Of Defense</td>
+      <td class="p-3">path traversal</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2024-10-12</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20250215-mozilla-path_traversal/">Mozilla VPN Clients: RCE via file write and path traversal</a>
+      </td>
+      <td class="p-3">Mozilla</td>
+      <td class="p-3">Path Traversal</td>
+      <td class="p-3">6000</td>
+      <td class="p-3">2025-02-15</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20250603-mozilla-improper_input_validation/">Bypass &quot;No Links&quot; Restriction in Biography via Protocol-Relative URL (//)</a>
+      </td>
+      <td class="p-3">Mozilla</td>
+      <td class="p-3">Improper Input Validation</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2025-06-03</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20250716-weblate-PII_exposure/">Exposure of personal IP address via Email</a>
+      </td>
+      <td class="p-3">Weblate</td>
+      <td class="p-3">PII Exposure</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2025-07-16</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<div id="paginationContainer" class="flex gap-2 justify-center">
+  
+    <a href="/2/" class="px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition">← Prev</a>
+  
+
+  
+    <a href="/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      1
+    </a>
+  
+    <a href="/1/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      2
+    </a>
+  
+    <a href="/2/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      3
+    </a>
+  
+    <a href="/3/"
+       class="px-3 py-1 rounded transition
+         
+           bg-yellow-400 text-gray-900
+         ">
+      4
+    </a>
+  
+    <a href="/4/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      5
+    </a>
+  
+
+  
+    <a href="/4/" class="px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition">Next →</a>
+  
+</div>
+
+
+<script>
+
+
+const searchInput = document.getElementById("searchInput");
+const tableRows = document.querySelectorAll("table tbody tr");
+const paginationContainer = document.getElementById("paginationContainer");
+
+// search the term on the 
+
+const noResultsRow = document.createElement("tr");
+noResultsRow.innerHTML = `<td colspan="5" class="text-center text-gray-400 p-4">🔍 No reports found</td>`;
+
+function updatePaginationVisibility() {
+  const visibleRows = Array.from(tableRows).filter(row => row.style.display !== "none");
+  // Show pagination only if more than 25 visible rows
+  paginationContainer.style.display = visibleRows.length > 25 ? "flex" : "none";
+}
+
+
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  let anyVisible = false;
+
+  tableRows.forEach(row => {
+    const title = row.cells[0].innerText.toLowerCase();
+    const target = row.cells[1].innerText.toLowerCase();
+    const bugType = row.cells[2].innerText.toLowerCase();
+    const bounty = row.cells[3].innerText.toLowerCase();
+
+    if (title.includes(query) || target.includes(query) || bugType.includes(query) || bounty.includes(query)) {
+      row.style.display = "";
+      anyVisible = true;
+    } else {
+      row.style.display = "none";
+    }
+  });
+
+  // Remove existing no-results row
+  if (document.getElementById("noResultsRow")) {
+    document.getElementById("noResultsRow").remove();
+  }
+
+  if (!anyVisible) {
+    noResultsRow.id = "noResultsRow";
+    tableRows[0].parentNode.appendChild(noResultsRow);
+  }
+
+});
+</script>
+
+
+
+
+  </main>
+
+<footer class="mt-5 bg-gray-900 text-center text-gray-400 py-8 px-4 relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-gray-700/0 before:via-gray-700/20 before:to-gray-700/0">
+  <div class="mb-3 space-x-6 text-gray-600 text-sm">
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated">Source Code</a>
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated/issues">Contribute</a>
+  </div>
+
+  <div class=" mb-3 text-gray-500 text-xs">
+    All reports are for educational purposes only.
+  </div>
+</footer>
+
+
+</body>
+
+</html>

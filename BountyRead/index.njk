@@ -1,0 +1,221 @@
+---
+layout: layout.njk
+title: Bounty Reports
+---
+
+<div class="flex flex-wrap items-center justify-between mb-6 gap-4">
+  <h2 class="text-2xl font-semibold text-gray-200">All Reports</h2>
+  <input id="searchInput" 
+         type="text" 
+         placeholder="Search reports..." 
+         class="w-64 px-4 py-2 rounded bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+</div>
+
+<table class="min-w-full table-fixed bg-gray-800 shadow-sm rounded mb-6 text-gray-200">
+  <thead>
+    <tr class="bg-gray-700 text-left text-gray-200">
+      <th class="w-1/2 p-3 cursor-pointer select-none" onclick="orderBy('title')">
+        Title <span id="sortIndicator-title" class="inline-block w-4 text-right">↕</span>
+      </th>
+      <th class="w-1/5 p-3 cursor-pointer select-none" onclick="orderBy('target')">
+        Target <span id="sortIndicator-target" class="inline-block w-4 text-right">↕</span>
+      </th>
+      <th class="w-1/5 p-3 cursor-pointer select-none" onclick="orderBy('bug_type')">
+        Bug Type <span id="sortIndicator-bug_type" class="inline-block w-4 text-right">↕</span>
+      </th>
+      <th class="w-1/5 p-3 cursor-pointer select-none" onclick="orderBy('bounty')">
+        Bounty ($) <span id="sortIndicator-bounty" class="inline-block w-4 text-right">↕</span>
+      </th>
+      <th class="w-1/5 p-3 cursor-pointer select-none" onclick="orderBy('date')">
+        Date <span id="sortIndicator-date" class="inline-block w-4 text-right">↕</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody id="reportsTableBody">
+  </tbody>
+</table>
+
+
+<div class="flex gap-2 justify-end text-gray-400 text-sm mt-2">
+  <span>Showing <span id="shownCount">0</span> of <span id="totalCount">{{ reports | length }}</span> reports</span>
+</div>
+
+<div id="paginationContainer" class="flex gap-2 justify-center">
+</div>
+
+
+<script>
+  // All reports data passed from Eleventy
+  const allReports = {{ reports | json | safe }};
+  const resultCounter = document.getElementById('shownCount');
+
+  // Config
+  const ITEMS_PER_PAGE = 25;
+  let currentPage = 1;
+  let currentQuery = '';
+  let filteredReports = [...allReports]; // Start with all
+
+  // Function to render table rows for given data slice
+  function renderTable(reportsSlice) {
+    const tbody = document.getElementById('reportsTableBody');
+    tbody.innerHTML = ''; // Clear existing
+
+    if (reportsSlice.length === 0) {
+      tbody.innerHTML = `<tr id="noResultsRow"><td colspan="5" class="text-center text-gray-400 p-4">🔍 No reports found</td></tr>`;
+      return;
+    }
+
+    reportsSlice.forEach(report => {
+      const row = document.createElement('tr');
+      row.className = 'border-t border-gray-600 hover:bg-gray-700';
+      row.innerHTML = `
+        <td class="p-3 text-yellow-400">
+          <a href="${report.path}">${report.title}</a>
+        </td>
+        <td class="p-3">${report.target}</td>
+        <td class="p-3">${report.bug_type}</td>
+        <td class="p-3">${report.bounty || '—'}</td>
+        <td class="p-3">${report.date || '—'}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+
+  let currentSort = { key: null, asc: true };
+
+  function orderBy(col) {
+    if (currentSort.key === col) {
+      currentSort.asc = !currentSort.asc;
+    } else {
+      currentSort.key = col;
+      currentSort.asc = true;
+    }
+  
+    filteredReports.sort((a, b) => {
+      let valA = a[col] ?? '';
+      let valB = b[col] ?? '';
+  
+      // Numeric sort
+      const numA = parseFloat(valA);
+      const numB = parseFloat(valB);
+      if (!isNaN(numA) && !isNaN(numB)) {
+        return currentSort.asc ? numA - numB : numB - numA;
+      }
+  
+      // Date sort
+      const dateA = new Date(valA);
+      const dateB = new Date(valB);
+      if (!isNaN(dateA.getTime()) && !isNaN(dateB.getTime())) {
+        return currentSort.asc ? dateA - dateB : dateB - dateA;
+      }
+  
+      // String sort
+      valA = valA.toString().toLowerCase();
+      valB = valB.toString().toLowerCase();
+      if (valA < valB) return currentSort.asc ? -1 : 1;
+      if (valA > valB) return currentSort.asc ? 1 : -1;
+      return 0;
+  });
+
+  
+
+
+  // Reset all indicators
+  document.querySelectorAll('[id^="sortIndicator-"]').forEach(el => {
+    el.textContent = '↕';
+  });
+
+  // Set active indicator
+  const indicator = document.getElementById(`sortIndicator-${col}`);
+  if (indicator) {
+    indicator.textContent = currentSort.asc ? '↑' : '↓';
+  }
+
+  currentPage = 1;
+  updateDisplay();
+}
+
+
+
+  function renderPagination(totalItems) {
+    const paginationContainer = document.getElementById('paginationContainer');
+    paginationContainer.innerHTML = ''; // Clear existing
+
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    if (totalPages <= 1) return; // Hide if no pagination needed
+
+    // Prev button
+    if (currentPage > 1) {
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition';
+      prevBtn.textContent = '← Prev';
+      prevBtn.onclick = () => {
+        currentPage--;
+        updateDisplay();
+      };
+      paginationContainer.appendChild(prevBtn);
+    }
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement('button');
+      pageBtn.className = `px-3 py-1 rounded transition ${currentPage === i ? 'bg-yellow-400 text-gray-900' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`;
+      pageBtn.textContent = i;
+      pageBtn.onclick = () => {
+        currentPage = i;
+        updateDisplay();
+      };
+      paginationContainer.appendChild(pageBtn);
+    }
+
+    // Next button
+    if (currentPage < totalPages) {
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition';
+      nextBtn.textContent = 'Next →';
+      nextBtn.onclick = () => {
+        currentPage++;
+        updateDisplay();
+      };
+      paginationContainer.appendChild(nextBtn);
+    }
+  }
+
+  // Function to filter reports based on query
+  function filterReports(query) {
+    if (!query || query.trim() === "") return allReports;
+    const lowerQuery = query.toLowerCase();
+    return allReports.filter(report => {
+      const title = String(report.title || '').toLowerCase();
+      const target = String(report.target || '').toLowerCase();
+      const bugType = String(report.bug_type || '').toLowerCase();
+      const bounty = String(report.bounty || '').toLowerCase();
+      const summary = String(report.summary || '').toLowerCase();
+      return summary.includes(lowerQuery) || title.includes(lowerQuery) || target.includes(lowerQuery) || bugType.includes(lowerQuery) || bounty.includes(lowerQuery);
+    });
+  }
+
+  // Update display: filter, paginate, render
+  function updateDisplay() {
+    //filteredReports = filterReports(currentQuery);
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const slice = filteredReports.slice(start, end);
+    renderTable(slice);
+    renderPagination(filteredReports.length);
+    resultCounter.textContent = filteredReports.length;
+  }
+
+  // Search input listener
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', () => {
+    currentQuery = searchInput.value;
+    currentPage = 1; // Reset to page 1 on new search
+    filteredReports = filterReports(currentQuery);
+    currentSort = { key: null, asc: true }; // Reset sort when new search
+    updateDisplay();
+  });
+
+  // Initial render
+  updateDisplay();
+</script>

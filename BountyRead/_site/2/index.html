@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Bounty Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-900 text-gray-200">
+  <nav class="bg-gray-800 shadow p-4 mb-6">
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold text-yellow-400">🛡️ Bug Bounty Reports</h1>
+    </div>
+  </nav>
+
+  <main class="flex-grow container mx-auto px-4">
+    
+<div class="flex flex-wrap items-center justify-between mb-6 gap-4">
+  <h2 class="text-2xl font-semibold text-gray-200">All Reports</h2>
+  <input id="searchInput" 
+         type="text" 
+         placeholder="Search reports..." 
+         class="w-64 px-4 py-2 rounded bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+</div>
+
+
+<table class="min-w-full bg-gray-800 shadow-sm rounded mb-6 text-gray-200">
+  <thead>
+    <tr class="bg-gray-700 text-left text-gray-200">
+      <th class="p-3">Title</th>
+      <th class="p-3">Target</th>
+      <th class="p-3">Bug Type</th>
+      <th class="p-3">Bounty</th>
+      <th class="p-3">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191204-nordsecurity-IDOR/">IDOR allow access to payments data of any user - nordsecurity</a>
+      </td>
+      <td class="p-3">Nord VPN</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-12-04</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191216-reverb-race_condition/">Race Condition allows to redeem multiple times gift cards which leads to free &quot;money&quot;</a>
+      </td>
+      <td class="p-3">reverb.com</td>
+      <td class="p-3">Race condition</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-12-16</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200110-zomato-http_req_smuggling/">Stealing Zomato X-Access-Token: in Bulk using HTTP Request Smuggling on api.zomato.com</a>
+      </td>
+      <td class="p-3">Zomato</td>
+      <td class="p-3">HTTP request smuggling</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-01-10</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200220-DoD-IDOR/">IDOR - Delete Users Saved Projects</a>
+      </td>
+      <td class="p-3">U.S. Dept of Defense</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-02-20</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200305-playstation-SSRF/">SSRF on Image renderer</a>
+      </td>
+      <td class="p-3">Playstation</td>
+      <td class="p-3">SSRF</td>
+      <td class="p-3">1000</td>
+      <td class="p-3">2020-03-05</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200428-RGhost-IDOR/">Idor on the DELETE /comments/</a>
+      </td>
+      <td class="p-3">Rghost</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-04-28</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200507-helium-http_req_smuggling/">HTTP request Smuggling (CL.TE) - Helium</a>
+      </td>
+      <td class="p-3">Helium</td>
+      <td class="p-3">HTTP request smuggling</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-05-07</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200520-shopify-account_takeover/">Takeover an account that doesn&#39;t have a Shopify ID and more</a>
+      </td>
+      <td class="p-3">Shopify</td>
+      <td class="p-3">Account Takeover</td>
+      <td class="p-3">22500</td>
+      <td class="p-3">2020-05-20</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200613-glassdoor-MFA/">2FA bypass by sending blank code</a>
+      </td>
+      <td class="p-3">glassdoor</td>
+      <td class="p-3">MFA</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-06-13</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200703-automattic-IDOR/">IDOR when moving contents at CrowdSignal</a>
+      </td>
+      <td class="p-3">automattic</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-07-03</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200704-automattic-IDOR/">IDOR when editing users leads to Account Takeover without User Interaction at CrowdSignal</a>
+      </td>
+      <td class="p-3">automattic</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-07-04</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200708-DoD-subdomain_takeover/">Subdomain takeover due to an unclaimed Amazon S3 bucket</a>
+      </td>
+      <td class="p-3">U.S. Dept Of Defense</td>
+      <td class="p-3">subdomain takeover</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-07-08</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200716-paypal-dependency_confusion/">RCE via npm misconfig -- installing internal libraries from the public registry</a>
+      </td>
+      <td class="p-3">Paypal</td>
+      <td class="p-3">Dependency confusion</td>
+      <td class="p-3">30000</td>
+      <td class="p-3">2020-07-16</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20200925-cs_money-IDOR/">IDOR in https://3d.cs.money/</a>
+      </td>
+      <td class="p-3">CS Money</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2020-09-25</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20201029-shopify-information_disclosure/">[Information Disclosure] Amazon S3 Bucket of Shopify Ping (iOS) have public access of other users image</a>
+      </td>
+      <td class="p-3">shopify</td>
+      <td class="p-3">Information Disclosure</td>
+      <td class="p-3">2900</td>
+      <td class="p-3">2020-10-29</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20210126-shopify-sensitive_data_exposure/">Github access token exposure</a>
+      </td>
+      <td class="p-3">shopify</td>
+      <td class="p-3">sensitive data exposure</td>
+      <td class="p-3">50000</td>
+      <td class="p-3">2021-01-26</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20210216-glovo-SSTI/">Server Side Template Injection on Name parameter during Sign Up process</a>
+      </td>
+      <td class="p-3">Glovo</td>
+      <td class="p-3">SSTI</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2021-02-16</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20210519-evernote-SSRF/">Full read SSRF in www.evernote.com that can leak aws metadata and local file inclusion</a>
+      </td>
+      <td class="p-3">evernote</td>
+      <td class="p-3">SSRF</td>
+      <td class="p-3">5000</td>
+      <td class="p-3">2021-05-19</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20210723-algolia-MFA/">Information disclosure -&gt; 2fa bypass -&gt; POST exploitation</a>
+      </td>
+      <td class="p-3">algolia</td>
+      <td class="p-3">MFA</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2021-07-23</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20210813-basecamp-subdomain_takeover/">Domain Takeover [3737signals.com]</a>
+      </td>
+      <td class="p-3">basecamp</td>
+      <td class="p-3">Subdomain takeover</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2021-08-13</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20210830-affirm-IDOR/">UniFi v3.2.10 Cross-Site Request Forgeries / Referer-Check Bypass</a>
+      </td>
+      <td class="p-3">Affirm</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">500</td>
+      <td class="p-3">2021-08-30</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20211117-acronis-IDOR/">IDOR vulnerability (Price manipulation)</a>
+      </td>
+      <td class="p-3">Acronis</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2021-11-17</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220113-MTN_Group-IDOR/">Remove Every User, Admin, And Owner Out Of Their Teams on developers.mtn.com via IDOR + Information Disclosure</a>
+      </td>
+      <td class="p-3">MTN Group</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2022-01-13</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220217-stripe-CSRF/">CSRF token validation system is disabled on Stripe Dashboard</a>
+      </td>
+      <td class="p-3">stripe</td>
+      <td class="p-3">CSRF</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2022-02-17</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20220414-hackerone-race_condition/">Race condition in joining CTF group</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">Race condition</td>
+      <td class="p-3">500</td>
+      <td class="p-3">2022-04-14</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<div id="paginationContainer" class="flex gap-2 justify-center">
+  
+    <a href="/1/" class="px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition">← Prev</a>
+  
+
+  
+    <a href="/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      1
+    </a>
+  
+    <a href="/1/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      2
+    </a>
+  
+    <a href="/2/"
+       class="px-3 py-1 rounded transition
+         
+           bg-yellow-400 text-gray-900
+         ">
+      3
+    </a>
+  
+    <a href="/3/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      4
+    </a>
+  
+    <a href="/4/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      5
+    </a>
+  
+
+  
+    <a href="/3/" class="px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition">Next →</a>
+  
+</div>
+
+
+<script>
+
+
+const searchInput = document.getElementById("searchInput");
+const tableRows = document.querySelectorAll("table tbody tr");
+const paginationContainer = document.getElementById("paginationContainer");
+
+// search the term on the 
+
+const noResultsRow = document.createElement("tr");
+noResultsRow.innerHTML = `<td colspan="5" class="text-center text-gray-400 p-4">🔍 No reports found</td>`;
+
+function updatePaginationVisibility() {
+  const visibleRows = Array.from(tableRows).filter(row => row.style.display !== "none");
+  // Show pagination only if more than 25 visible rows
+  paginationContainer.style.display = visibleRows.length > 25 ? "flex" : "none";
+}
+
+
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  let anyVisible = false;
+
+  tableRows.forEach(row => {
+    const title = row.cells[0].innerText.toLowerCase();
+    const target = row.cells[1].innerText.toLowerCase();
+    const bugType = row.cells[2].innerText.toLowerCase();
+    const bounty = row.cells[3].innerText.toLowerCase();
+
+    if (title.includes(query) || target.includes(query) || bugType.includes(query) || bounty.includes(query)) {
+      row.style.display = "";
+      anyVisible = true;
+    } else {
+      row.style.display = "none";
+    }
+  });
+
+  // Remove existing no-results row
+  if (document.getElementById("noResultsRow")) {
+    document.getElementById("noResultsRow").remove();
+  }
+
+  if (!anyVisible) {
+    noResultsRow.id = "noResultsRow";
+    tableRows[0].parentNode.appendChild(noResultsRow);
+  }
+
+});
+</script>
+
+
+
+
+  </main>
+
+<footer class="mt-5 bg-gray-900 text-center text-gray-400 py-8 px-4 relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-gray-700/0 before:via-gray-700/20 before:to-gray-700/0">
+  <div class="mb-3 space-x-6 text-gray-600 text-sm">
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated">Source Code</a>
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated/issues">Contribute</a>
+  </div>
+
+  <div class=" mb-3 text-gray-500 text-xs">
+    All reports are for educational purposes only.
+  </div>
+</footer>
+
+
+</body>
+
+</html>

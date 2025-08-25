@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Bounty Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-900 text-gray-200">
+  <nav class="bg-gray-800 shadow p-4 mb-6">
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold text-yellow-400">🛡️ Bug Bounty Reports</h1>
+    </div>
+  </nav>
+
+  <main class="flex-grow container mx-auto px-4">
+    
+<div class="flex flex-wrap items-center justify-between mb-6 gap-4">
+  <h2 class="text-2xl font-semibold text-gray-200">All Reports</h2>
+  <input id="searchInput" 
+         type="text" 
+         placeholder="Search reports..." 
+         class="w-64 px-4 py-2 rounded bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+</div>
+
+
+<table class="min-w-full bg-gray-800 shadow-sm rounded mb-6 text-gray-200">
+  <thead>
+    <tr class="bg-gray-700 text-left text-gray-200">
+      <th class="p-3">Title</th>
+      <th class="p-3">Target</th>
+      <th class="p-3">Bug Type</th>
+      <th class="p-3">Bounty</th>
+      <th class="p-3">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20171106-bohemia_interactive-IDOR/">IDOR to view User Order Information</a>
+      </td>
+      <td class="p-3">Bohemia interactive</td>
+      <td class="p-3">IDOR</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2017-11-06</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20180409-roblox-subdomain_takeover/">Subdomain Takeover to Authentication bypass</a>
+      </td>
+      <td class="p-3">roblox</td>
+      <td class="p-3">subdomain takeover</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2018-04-09</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20180516-grab-subdomain_takeover/">Subdomain Takeover Via Insecure CloudFront Distribution cdn.grab.com</a>
+      </td>
+      <td class="p-3">Grab</td>
+      <td class="p-3">Subdomain takeover</td>
+      <td class="p-3">1000</td>
+      <td class="p-3">2018-05-16</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20180529-zomato-SQL_injection/">Boolean-Blind SQLi on `order_id` parameter</a>
+      </td>
+      <td class="p-3">Zomato</td>
+      <td class="p-3">SQL Injection (Boolean-based Blind)</td>
+      <td class="p-3">1000</td>
+      <td class="p-3">2018-05-29</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20180614-shopify-subdomain_takeover/">Subdomain Takeover - https://competition.shopify.com/</a>
+      </td>
+      <td class="p-3">shopify</td>
+      <td class="p-3">Subdomain takeover</td>
+      <td class="p-3">750</td>
+      <td class="p-3">2018-06-14</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20180823-duckduckgo-SSRF/">SSRF on duckduckgo.com/iu/</a>
+      </td>
+      <td class="p-3">DuckDuckGo</td>
+      <td class="p-3">SSRF</td>
+      <td class="p-3">swag</td>
+      <td class="p-3">2018-08-23</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20180828-grab-information_disclosure/">[Grab Android/iOS] Insecure deeplink leads to sensitive information disclosure</a>
+      </td>
+      <td class="p-3">Grab</td>
+      <td class="p-3">Information Disclosure</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2018-08-28</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20180901-khan_academy-subdomain_takeover/">Possible Take Over Subdomain For Inbound Emails</a>
+      </td>
+      <td class="p-3">khanacademy</td>
+      <td class="p-3">Subdomain takeover</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2018-09-01</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20181013-shopify-SSTI/">H1514 Server Side Template Injection in Return Magic email templates?</a>
+      </td>
+      <td class="p-3">Shopify</td>
+      <td class="p-3">SSTI</td>
+      <td class="p-3">10000</td>
+      <td class="p-3">2018-10-13</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20181026-hackerone-race_condition/">Race condition in performing retest allows duplicated payments</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">Race condition</td>
+      <td class="p-3">2500</td>
+      <td class="p-3">2018-10-26</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190404-shopify-CSRF/">CSRF on connecting Paypal as Payment Provider</a>
+      </td>
+      <td class="p-3">shopify</td>
+      <td class="p-3">CSRF</td>
+      <td class="p-3">500</td>
+      <td class="p-3">2019-04-04</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190419-uber-information_disclosure/">Sensitive user information disclosure at bonjour.uber.com/marketplace/_rpc via the &#39;userUuid&#39; parameter.</a>
+      </td>
+      <td class="p-3">Uber</td>
+      <td class="p-3">Information Disclosure</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-04-19</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190518-x_com-CSRF/">Periscope android app deeplink leads to CSRF in follow action</a>
+      </td>
+      <td class="p-3">x.com</td>
+      <td class="p-3">CSRF</td>
+      <td class="p-3">1540</td>
+      <td class="p-3">2019-05-18</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190609-hackerone-race_condition/">Race Condition leads to undeletable group member</a>
+      </td>
+      <td class="p-3">hackerone</td>
+      <td class="p-3">Race condition</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-06-09</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190718-moneybird-MFA/">Enable 2FA without verifying the email</a>
+      </td>
+      <td class="p-3">Moneybird</td>
+      <td class="p-3">MFA</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-07-18</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190801-starbucks-subdomain_takeover/">Subdomain takeover of datacafe-cert.starbucks.com</a>
+      </td>
+      <td class="p-3">starbucks</td>
+      <td class="p-3">Subdomain takeover</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-08-01</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190802-grammarly-MFA/">“email” MFA mode allows bypassing MFA from victim’s device when the device trust is not expired</a>
+      </td>
+      <td class="p-3">grammarly</td>
+      <td class="p-3">MFA</td>
+      <td class="p-3">2500</td>
+      <td class="p-3">2019-08-02</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190918-eternal-information_disclosure/">Information Disclosure through Sentry Instance.</a>
+      </td>
+      <td class="p-3">Eternal</td>
+      <td class="p-3">Information Disclosure</td>
+      <td class="p-3">750</td>
+      <td class="p-3">2019-09-18</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20190918-semmle-path_Traversal/">Worker container escape lead to arbitrary file reading in host machine [again]</a>
+      </td>
+      <td class="p-3">Semmle</td>
+      <td class="p-3">path traversal</td>
+      <td class="p-3">2000</td>
+      <td class="p-3">2019-09-18</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191031-GSA_bounty-http_req_smuggling/">HTTP Request Smuggling on https://labs.data.gov</a>
+      </td>
+      <td class="p-3">GSA Bounty</td>
+      <td class="p-3">HTTP request smuggling</td>
+      <td class="p-3">750</td>
+      <td class="p-3">2019-10-31</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191109-gitlab-path_traversal/">Path traversal, to RCE</a>
+      </td>
+      <td class="p-3">Gitlab</td>
+      <td class="p-3">path traversal</td>
+      <td class="p-3">12000</td>
+      <td class="p-3">2019-11-09</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191114-slack-http_req_smuggling/">Mass account takeovers using HTTP Request Smuggling on https://slackb.com/ to steal session cookies</a>
+      </td>
+      <td class="p-3">Slack</td>
+      <td class="p-3">HTTP request smuggling</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-11-14</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191118-LY_corporation-http_req_smuggling/">Request smuggling on admin-official.line.me could lead to account takeover</a>
+      </td>
+      <td class="p-3">LY corporation</td>
+      <td class="p-3">HTTP request smuggling</td>
+      <td class="p-3">Unspecified</td>
+      <td class="p-3">2019-11-18</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191118-paypal-XSSI/">The Bug That Exposed Your PayPal Password</a>
+      </td>
+      <td class="p-3">Paypal</td>
+      <td class="p-3">XSSI</td>
+      <td class="p-3">15300</td>
+      <td class="p-3">2019-11-18</td>
+    </tr>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20191125-kubernetes-subdomain_takeover/">Subdomain Takeover Via via Dangling NS records on Amazon Route 53 http://api.e2e-kops-aws-canary.test-cncf-aws.canary.k8s.io</a>
+      </td>
+      <td class="p-3">Kubernetes</td>
+      <td class="p-3">Subdomain takeover</td>
+      <td class="p-3">250</td>
+      <td class="p-3">2019-11-25</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<div id="paginationContainer" class="flex gap-2 justify-center">
+  
+    <a href="/" class="px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition">← Prev</a>
+  
+
+  
+    <a href="/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      1
+    </a>
+  
+    <a href="/1/"
+       class="px-3 py-1 rounded transition
+         
+           bg-yellow-400 text-gray-900
+         ">
+      2
+    </a>
+  
+    <a href="/2/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      3
+    </a>
+  
+    <a href="/3/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      4
+    </a>
+  
+    <a href="/4/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      5
+    </a>
+  
+
+  
+    <a href="/2/" class="px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition">Next →</a>
+  
+</div>
+
+
+<script>
+
+
+const searchInput = document.getElementById("searchInput");
+const tableRows = document.querySelectorAll("table tbody tr");
+const paginationContainer = document.getElementById("paginationContainer");
+
+// search the term on the 
+
+const noResultsRow = document.createElement("tr");
+noResultsRow.innerHTML = `<td colspan="5" class="text-center text-gray-400 p-4">🔍 No reports found</td>`;
+
+function updatePaginationVisibility() {
+  const visibleRows = Array.from(tableRows).filter(row => row.style.display !== "none");
+  // Show pagination only if more than 25 visible rows
+  paginationContainer.style.display = visibleRows.length > 25 ? "flex" : "none";
+}
+
+
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  let anyVisible = false;
+
+  tableRows.forEach(row => {
+    const title = row.cells[0].innerText.toLowerCase();
+    const target = row.cells[1].innerText.toLowerCase();
+    const bugType = row.cells[2].innerText.toLowerCase();
+    const bounty = row.cells[3].innerText.toLowerCase();
+
+    if (title.includes(query) || target.includes(query) || bugType.includes(query) || bounty.includes(query)) {
+      row.style.display = "";
+      anyVisible = true;
+    } else {
+      row.style.display = "none";
+    }
+  });
+
+  // Remove existing no-results row
+  if (document.getElementById("noResultsRow")) {
+    document.getElementById("noResultsRow").remove();
+  }
+
+  if (!anyVisible) {
+    noResultsRow.id = "noResultsRow";
+    tableRows[0].parentNode.appendChild(noResultsRow);
+  }
+
+});
+</script>
+
+
+
+
+  </main>
+
+<footer class="mt-5 bg-gray-900 text-center text-gray-400 py-8 px-4 relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-gray-700/0 before:via-gray-700/20 before:to-gray-700/0">
+  <div class="mb-3 space-x-6 text-gray-600 text-sm">
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated">Source Code</a>
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated/issues">Contribute</a>
+  </div>
+
+  <div class=" mb-3 text-gray-500 text-xs">
+    All reports are for educational purposes only.
+  </div>
+</footer>
+
+
+</body>
+
+</html>

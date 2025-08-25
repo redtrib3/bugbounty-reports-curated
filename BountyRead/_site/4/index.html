@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Bounty Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-900 text-gray-200">
+  <nav class="bg-gray-800 shadow p-4 mb-6">
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold text-yellow-400">🛡️ Bug Bounty Reports</h1>
+    </div>
+  </nav>
+
+  <main class="flex-grow container mx-auto px-4">
+    
+<div class="flex flex-wrap items-center justify-between mb-6 gap-4">
+  <h2 class="text-2xl font-semibold text-gray-200">All Reports</h2>
+  <input id="searchInput" 
+         type="text" 
+         placeholder="Search reports..." 
+         class="w-64 px-4 py-2 rounded bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+</div>
+
+
+<table class="min-w-full bg-gray-800 shadow-sm rounded mb-6 text-gray-200">
+  <thead>
+    <tr class="bg-gray-700 text-left text-gray-200">
+      <th class="p-3">Title</th>
+      <th class="p-3">Target</th>
+      <th class="p-3">Bug Type</th>
+      <th class="p-3">Bounty</th>
+      <th class="p-3">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="border-t border-gray-600 hover:bg-gray-700">
+      <td class="p-3 text-yellow-400">
+        <a href="/reports/20250731-grok-business_logic/">Business logic flaw in Grok AI allows premium usage post free-tier</a>
+      </td>
+      <td class="p-3">GrokAI</td>
+      <td class="p-3">business_logic</td>
+      <td class="p-3">1200</td>
+      <td class="p-3">2025-07-31</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<div id="paginationContainer" class="flex gap-2 justify-center">
+  
+    <a href="/3/" class="px-3 py-1 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition">← Prev</a>
+  
+
+  
+    <a href="/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      1
+    </a>
+  
+    <a href="/1/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      2
+    </a>
+  
+    <a href="/2/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      3
+    </a>
+  
+    <a href="/3/"
+       class="px-3 py-1 rounded transition
+         
+           bg-gray-700 text-gray-200 hover:bg-gray-600
+         ">
+      4
+    </a>
+  
+    <a href="/4/"
+       class="px-3 py-1 rounded transition
+         
+           bg-yellow-400 text-gray-900
+         ">
+      5
+    </a>
+  
+
+  
+</div>
+
+
+<script>
+
+
+const searchInput = document.getElementById("searchInput");
+const tableRows = document.querySelectorAll("table tbody tr");
+const paginationContainer = document.getElementById("paginationContainer");
+
+// search the term on the 
+
+const noResultsRow = document.createElement("tr");
+noResultsRow.innerHTML = `<td colspan="5" class="text-center text-gray-400 p-4">🔍 No reports found</td>`;
+
+function updatePaginationVisibility() {
+  const visibleRows = Array.from(tableRows).filter(row => row.style.display !== "none");
+  // Show pagination only if more than 25 visible rows
+  paginationContainer.style.display = visibleRows.length > 25 ? "flex" : "none";
+}
+
+
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  let anyVisible = false;
+
+  tableRows.forEach(row => {
+    const title = row.cells[0].innerText.toLowerCase();
+    const target = row.cells[1].innerText.toLowerCase();
+    const bugType = row.cells[2].innerText.toLowerCase();
+    const bounty = row.cells[3].innerText.toLowerCase();
+
+    if (title.includes(query) || target.includes(query) || bugType.includes(query) || bounty.includes(query)) {
+      row.style.display = "";
+      anyVisible = true;
+    } else {
+      row.style.display = "none";
+    }
+  });
+
+  // Remove existing no-results row
+  if (document.getElementById("noResultsRow")) {
+    document.getElementById("noResultsRow").remove();
+  }
+
+  if (!anyVisible) {
+    noResultsRow.id = "noResultsRow";
+    tableRows[0].parentNode.appendChild(noResultsRow);
+  }
+
+});
+</script>
+
+
+
+
+  </main>
+
+<footer class="mt-5 bg-gray-900 text-center text-gray-400 py-8 px-4 relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-gray-700/0 before:via-gray-700/20 before:to-gray-700/0">
+  <div class="mb-3 space-x-6 text-gray-600 text-sm">
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated">Source Code</a>
+    <a class="hover:text-yellow-500" href="https://github.com/redtrib3/bugbounty-reports-curated/issues">Contribute</a>
+  </div>
+
+  <div class=" mb-3 text-gray-500 text-xs">
+    All reports are for educational purposes only.
+  </div>
+</footer>
+
+
+</body>
+
+</html>
