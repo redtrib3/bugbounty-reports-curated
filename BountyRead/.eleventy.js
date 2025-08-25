@@ -18,7 +18,7 @@ module.exports = function (eleventyConfig) {
     return markdownLib.render(value || "");
   });
 
-
+  eleventyConfig.addPassthroughCopy({"favicon/": "/"});
   return {
     dir: {
       input: ".",
