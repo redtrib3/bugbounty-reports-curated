@@ -6,4 +6,4 @@ Allow: /
 
 
 
-Sitemap: https://blog.redtrib3.in/sitemap.xml
+Sitemap: https://bountyread.redtrib3.in/sitemap.xml
