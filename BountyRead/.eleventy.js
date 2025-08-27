@@ -3,15 +3,15 @@ const path = require("path");
 const yaml = require("js-yaml");
 
 module.exports = function (eleventyConfig) {
-  // Add json filter
+  const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+  
+  eleventyConfig.addPlugin(sitemap, {sitemap: {hostname: 'https://bountyread.redtrib3.in'}});
   eleventyConfig.addFilter("json", function (value) {
     return JSON.stringify(value);
   });
 
-  // Existing passthrough copy or other configs (if any)
   eleventyConfig.addPassthroughCopy("assets");
 
-  // Optional: Add Markdown filter if not already present (for report.njk)
   const markdownIt = require("markdown-it");
   const markdownLib = markdownIt({ html: true });
   eleventyConfig.addFilter("markdown", function (value) {
@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy({"favicon/": "/"});
+  eleventyConfig.addPassthroughCopy("robots.txt")
   return {
     dir: {
       input: ".",
